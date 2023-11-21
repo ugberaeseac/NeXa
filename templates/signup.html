@@ -3,7 +3,10 @@
 {% block content %}
 
 {% for flashed in get_flashed_messages() %}
-    Hi {{ name }}: {{ flashed }}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        Hi {{ name }}: {{ flashed }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
 {% endfor %}
 
 {% if name %}
@@ -16,31 +19,35 @@
     Re-Password: {{ re_password }}<br/>
 
 {% else %}
-    <h1>Sign up:</h1>
+<div class="signup">
+    <h1 class="signupH">Sign up</h1>
     <br/>
-    <form method="post">
-        {{ form.hidden_tag() }}
+    <!--Add Shadow to form-->
+    <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
+        <form method="post">
+            {{ form.hidden_tag() }}
 
-        {{ form.name.label(class="form-label") }}
-        {{ form.name(class="form-control") }}
+            {{ form.name.label(class="form-label") }}
+            {{ form.name(class="form-control") }}
 
-        {{ form.email.label(class="form-label") }}
-        {{ form.email(class="form-control") }}
+            {{ form.email.label(class="form-label") }}
+            {{ form.email(class="form-control") }}
 
-        {{ form.username.label(class="form-label") }}
-        {{ form.username(class="form-control") }}
-        
-        {{ form.password.label(class="form-label") }}
-        {{ form.password(class="form-control") }}
-        
-        {{ form.re_password.label(class="form-label") }}
-        {{ form.re_password(class="form-control") }}
+            {{ form.username.label(class="form-label") }}
+            {{ form.username(class="form-control") }}
+            
+            {{ form.password.label(class="form-label") }}
+            {{ form.password(class="form-control") }}
+            
+            {{ form.re_password.label(class="form-label") }}
+            {{ form.re_password(class="form-control") }}
 
-        <br/>
-        {{ form.submit(class="btn btn-secondary") }}
+            <br/>
+            {{ form.submit(class="btn btn-secondary") }}
 
-    </form>
-
+        </form>
+    </div>
+</div>
 {% endif %}
 
 {% endblock %}

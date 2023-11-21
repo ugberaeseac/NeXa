@@ -1,0 +1,16 @@
+
+.signup{
+    min-width: 500px;
+    max-width: 800px;
+}
+
+.signupH{
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
