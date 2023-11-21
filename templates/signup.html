@@ -19,11 +19,12 @@
     Re-Password: {{ re_password }}<br/>
 
 {% else %}
-<div class="signup">
-    <h1 class="signupH">Sign up</h1>
-    <br/>
-    <!--Add Shadow to form-->
-    <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
+
+<!--Add Shadow to form-->
+<div class="shadow p-3 mb-5 bg-body-tertiary rounded signup_container">
+    <div class="signup">
+        <h1 class="signupH">Sign up</h1>
+        <br/>
         <form method="post">
             {{ form.hidden_tag() }}
 
@@ -35,16 +36,15 @@
 
             {{ form.username.label(class="form-label") }}
             {{ form.username(class="form-control") }}
-            
+
             {{ form.password.label(class="form-label") }}
             {{ form.password(class="form-control") }}
-            
+
             {{ form.re_password.label(class="form-label") }}
             {{ form.re_password(class="form-control") }}
 
             <br/>
             {{ form.submit(class="btn btn-secondary") }}
-
         </form>
     </div>
 </div>

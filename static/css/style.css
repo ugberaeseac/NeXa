@@ -4,11 +4,16 @@
     max-width: 800px;
 }
 
-.signupH{
+.signupH, .loginH{
     text-align: center;
 }
 
-.container{
+.login{
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.signup_container, .login_container{
     display: flex;
     justify-content: center;
     align-items: center;

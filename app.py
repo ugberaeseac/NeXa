@@ -63,6 +63,41 @@ def signup():
                            form=form
                            )
 
+#Define Login form
+class LoginForm(FlaskForm):
+    email_or_username = StringField("Email/UserName", validators=[DataRequired()])
+    password = PasswordField("Password", validators=[DataRequired()])
+    submit = SubmitField("Login")
+
+# Create login route
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    username = None
+    password = None
+    form = LoginForm()
+
+    # Validate
+    if form.validate_on_submit():
+        """
+        Need to verify <email> or <username> exist in the database
+        """
+        
+        # Query db for user's Username
+        # Replace form.email_or_username.data with {db_query for username if email was entered}
+        username = form.email_or_username.data
+        password = form.password.data
+
+        #Reset Fields
+        form.email_or_username.data = ""
+        form.password.data = ""
+        flash("Login successful")
+    return render_template("login.html",
+                           username=username,
+                           password=password,
+                           form=form
+                           )
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
