@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for flashed in get_flashed_messages() %}
+    Hi {{ name }}: {{ flashed }}
+{% endfor %}
+
+{% if name %}
+    <h1>Data Submitted: </h1>
+    <br/><br/>
+    Name: {{ name }}<br/>
+    Email: {{ email }}<br/>
+    UserName: {{ username }}<br/>
+    Password: {{ password }}<br/>
+    Re-Password: {{ re_password }}<br/>
+
+{% else %}
+    <h1>Sign up:</h1>
+    <br/>
+    <form method="post">
+        {{ form.hidden_tag() }}
+
+        {{ form.name.label(class="form-label") }}
+        {{ form.name(class="form-control") }}
+
+        {{ form.email.label(class="form-label") }}
+        {{ form.email(class="form-control") }}
+
+        {{ form.username.label(class="form-label") }}
+        {{ form.username(class="form-control") }}
+        
+        {{ form.password.label(class="form-label") }}
+        {{ form.password(class="form-control") }}
+        
+        {{ form.re_password.label(class="form-label") }}
+        {{ form.re_password(class="form-control") }}
+
+        <br/>
+        {{ form.submit(class="btn btn-secondary") }}
+
+    </form>
+
+{% endif %}
+
+{% endblock %}
