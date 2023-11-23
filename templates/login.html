@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for flashed in get_flashed_messages() %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ flashed }}. Welcome {{ username }}: 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+
+{% if username %}
+    <h1>Sign in Details, no Validations yet</h1>
+    <br/><br/>
+    UserName : {{ username }}<br/>
+    Password : {{ password }}<br/>
+
+{% else %}
+
+<div class="login_container">
+    <div class="shadow p-3 mb-5 bg-body-tertiary rounded login">
+        <h1 class="loginH">Login</h1>
+        <br/>
+        <form method="post">
+            {{ form.hidden_tag() }}
+
+            {{ form.email_or_username.label(class="form-label") }}
+            {{ form.email_or_username(class="form-control") }}
+            <br/>
+            {{ form.password.label(class="form-label") }}
+            {{ form.password(class="form-control") }}
+
+            <br/>
+            {{ form.submit(class="btn btn-secondary") }}
+        </form>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

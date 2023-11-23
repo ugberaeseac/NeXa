@@ -1,0 +1,23 @@
+body{
+    background-color: #f4f4f4;
+}
+.signup{
+    min-width: 500px;
+    max-width: 800px;
+}
+
+.signupH, .loginH{
+    text-align: center;
+}
+
+.login{
+    min-width: 350px;
+    max-width: 500px;
+}
+
+.signup_container, .login_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
