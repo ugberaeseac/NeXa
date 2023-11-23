@@ -65,7 +65,7 @@ def signup():
 
 #Define Login form
 class LoginForm(FlaskForm):
-    email_or_username = StringField("Email/UserName", validators=[DataRequired()])
+    email_or_username = StringField("Email/Username", validators=[DataRequired()])
     password = PasswordField("Password", validators=[DataRequired()])
     submit = SubmitField("Login")
 

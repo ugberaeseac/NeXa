@@ -17,8 +17,8 @@
 
 {% else %}
 
-<div class="shadow p-3 mb-5 bg-body-tertiary rounded login_container">
-    <div class="login">
+<div class="login_container">
+    <div class="shadow p-3 mb-5 bg-body-tertiary rounded login">
         <h1 class="loginH">Login</h1>
         <br/>
         <form method="post">
@@ -26,7 +26,7 @@
 
             {{ form.email_or_username.label(class="form-label") }}
             {{ form.email_or_username(class="form-control") }}
-
+            <br/>
             {{ form.password.label(class="form-label") }}
             {{ form.password(class="form-control") }}
 

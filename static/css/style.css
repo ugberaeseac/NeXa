@@ -1,4 +1,6 @@
-
+body{
+    background-color: #f4f4f4;
+}
 .signup{
     min-width: 500px;
     max-width: 800px;
@@ -9,7 +11,7 @@
 }
 
 .login{
-    min-width: 300px;
+    min-width: 350px;
     max-width: 500px;
 }
 
