@@ -13,9 +13,7 @@ from os import getenv
 import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
-
-
-classses = {'User': User, 'Post': Post, 'Comment': Comment}
+import re
 
 
 class DBStorage:
@@ -69,3 +67,28 @@ class DBStorage:
         """
         if obj is not None:
             self.__session.delete(obj)
+
+    def filter(self, cls, data):
+        """
+
+        """
+        regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+        if (re.fullmatch(regex, data)):
+            query = self.__session.query(cls).filter(cls.email == data).first()
+        else:
+            query = self.__session.query(cls).filter(cls.username == data).first()
+        return query
+
+    def all(self, cls):
+        """
+
+        """
+        query = self.__session.query(cls).all()
+        return query
+
+    def get(self, cls, user_id):
+        """
+        returns object that matches the user id
+        """
+        query = self.__session.get(cls, user_id)
+        return query

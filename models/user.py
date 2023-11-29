@@ -10,12 +10,22 @@ from datetime import datetime
 from models.base import Base
 from models.post import Post
 from models.comment import Comment
+from models import storage
 import sqlalchemy
 from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.orm import relationship
+from flask_app import login_manager
 
 
-class User(Base):
+@login_manager.user_loader
+def load_user(user_id):
+    """
+    Loads a user from the database by the user id
+    """
+    pass
+
+
+class User(Base, UserMixin):
     """
     create a user class which represents the user table
     in the database

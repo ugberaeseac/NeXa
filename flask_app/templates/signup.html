@@ -4,19 +4,19 @@
 
 {% for flashed in get_flashed_messages() %}
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-        Hi {{ name }}: {{ flashed }}
+        Hi {{ form.name.data }}: {{ flashed }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
 {% endfor %}
 
-{% if name %}
+{% if form.name.data %}
     <h1>Data Submitted: </h1>
     <br/><br/>
-    Name: {{ name }}<br/>
-    Email: {{ email }}<br/>
-    UserName: {{ username }}<br/>
-    Password: {{ password }}<br/>
-    Re-Password: {{ re_password }}<br/>
+    Name: {{ form.name.data }}<br/>
+    Email: {{ form.email.data }}<br/>
+    UserName: {{ form.username.data }}<br/>
+    Password: {{ form.password.data }}<br/>
+    Confirm Password: {{ form.confirm_password.data }}<br/>
 
 {% else %}
 
@@ -40,8 +40,8 @@
             {{ form.password.label(class="form-label") }}
             {{ form.password(class="form-control") }}
 
-            {{ form.re_password.label(class="form-label") }}
-            {{ form.re_password(class="form-control") }}
+            {{ form.confirm_password.label(class="form-label") }}
+            {{ form.confirm_password(class="form-control") }}
 
             <br/>
             {{ form.submit(class="btn btn-secondary") }}
