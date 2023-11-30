@@ -7,8 +7,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from models import storage
-from models.user import User
+from nexa.models import User
 
 
 class RegistrationForm(FlaskForm):
@@ -26,7 +25,7 @@ class RegistrationForm(FlaskForm):
         """
 
         """
-        user = storage.filter(User, username.data)
+        user = User.query.filter_by(username=username.data).first()
         if user:
             raise ValidationError('Username has already been taken.')
 
@@ -34,7 +33,7 @@ class RegistrationForm(FlaskForm):
         """
 
         """
-        user = storage.filter(User, email.data)
+        user = User.query.filter_by(email=email.data)
         if user:
             raise ValidationError('Email has already been taken.')
 

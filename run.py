@@ -3,8 +3,7 @@
 
 """
 
-from flask_app import app
-
+from nexa import app
 
 
 if __name__ == '__main__':
