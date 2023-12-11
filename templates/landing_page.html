@@ -1,0 +1,135 @@
+{% include "header.html" %}
+{% extends "base.html" %}
+{% block content %}    
+    
+    <main>
+        <section class="first_section">
+            <div class="caption">
+                <h1>Connect, Learn and Share</h1>
+                <h3>NeXa The Microblogging Platform for ALX Community</h3>
+                <a href="#" class="button hover">Signup</a>
+            </div>
+        </section>
+
+        <section id="second_section" class="second_section">
+            <div class="about-heading">
+                <article>
+                    <h2>NeXa - Empowering ALX Community</h2><br/>
+                    <p>NeXa is the central hub for ALX learners, alumni, and mentors—a platform designed for seamless connections and collaborative learning.</p>
+                </article>
+            </div>
+            <div class="about-details">
+                <div class="about-left">
+                    <article>
+                        <div class="highlight">
+                            <h3>Key Highlights:</h3>
+                            <ul>
+                                <li><p>Connect & Collaborate: <span class="details"> 
+                                    Engage in vibrant discussions, seek guidance, and share insights within the ALX community.
+                                </span></p></li>
+                                <li><p>Mentorship Opportunities: <span class="details">
+                                    Access invaluable guidance from experienced mentors, shaping your journey towards success.
+                                </span></p></li>
+                                <li><p>Tailored Experience: <span class="details">
+                                    Personalized user profiles and feeds ensure a relevant and user-centric experience.
+                                </span></p></li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="benefit">
+                            <h3>How NeXa Benefits You:</h3>
+                            <ul>
+                                <li>
+                                    <p>Students:<span class="details">
+                                        Enhance learning by exchanging ideas and gaining mentorship from industry experts.
+                                    </span></p>
+                                </li>
+                                <li>
+                                    <p>Alumni:<span class="details">
+                                        Stay connected, share experiences, and guide the next generation of professionals.
+                                    </span></p>
+                                </li>
+                                <li>
+                                    <p>Mentors:<span class="details">
+                                        Offer support, advice, and networking opportunities to aspiring ALX members.
+                                    </span></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+                <div class="about-right">
+                    <img src="{{ url_for('static', filename='images/home.png') }}">
+                </div>
+            </div>
+            
+            <div class="promises">
+                <article>
+                    <div class="promise">
+                        <h2>Our Promise</h2>
+                        <p class="details">NeXa is committed to fostering an inclusive, supportive, and dynamic learning environment for every ALX community member.</p>
+                    </div>
+                    <div class="below-promise">
+                        <h3 class="no-top">Join NeXa now and be part of a community shaping the future of ALX learners!</h3>
+                        <div class="buttons">
+                            <a href="#" class="button-signup hover">Signup</a>
+                            <a href="#" class="button-login hover">Login</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section id="third_section" class="third_section">
+            <div class="contact-us-form">
+                <div class="contact-us-left">
+                </div>
+                <div class="contact-us-right">
+                    <form action="#" method="post" class="contact-us">
+                        <fieldset>
+                            <input id="fullname" type="text" name="fullname" placeholder="Fullname" required>
+                            <input id="fullname" type="email" name="email" placeholder="Email" required>
+                            <textarea id="message" type="text" name="message" placeholder="Message" row="4" cols="30" required></textarea>
+                        </fieldset>
+                        <input type="submit" value="Submit" class="button hover">
+                    </form>
+                </div>
+            </div>
+            <div class="contact-us-icons">
+                <ul>
+                    <li>
+                        <a class="twitter" href="#">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <i class="fa-brands fa-x-twitter fa-1x" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="facebook" href="#">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <i class="fa-brands fa-facebook fa-1x" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="instagram" href="#">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <i class="fa-brands fa-instagram fa-1x" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>   
+            </div>
+            
+        </section>
+    </main>
+    <footer class="footer">
+        Copyright © 2023 NeXa
+    </footer>
+{% endblock %}
