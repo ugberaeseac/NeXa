@@ -1,8 +1,9 @@
 {% include "header.html" %}
 {% extends "base.html" %}
 {% block content %}    
-    
-    <main>
+    <link href="{{ url_for('static', filename='css/landing_page.css') }}" rel="stylesheet">
+    <div class="landing_page-body">
+    <main >
         <section class="first_section">
             <div class="caption">
                 <h1>Connect, Learn and Share</h1>
@@ -129,7 +130,6 @@
             
         </section>
     </main>
-    <footer class="footer">
-        Copyright © 2023 NeXa
-    </footer>
+</div>
+{% include "footer.html" %}
 {% endblock %}

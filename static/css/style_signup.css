@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+.signup-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 92vh;
+    padding: 8vh;
+    /*background-color: #10174a;
+    background-image: url("../../images/gradient-blue-bg.jpg");
+    background-size: cover;*/
+    background-image: linear-gradient(to right, #6262de, #17172A, #1616db);
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    background-color: rgba(255, 255, 255, .1);
+    border: 2px solid rgba(255, 255, 255, .1);
+    backdrop-filter: blur(50px);
+    padding: 40px 35px 55px;
+    margin: 0 10px;
+}
+.container h1{
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+fieldset{
+    border: none;
+}
+.input-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.input-box .input-field{
+    position: relative;
+    width: 48%;
+    height: 50px;
+    margin: 13px 0;
+}
+
+.input-box .input-field input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 6px;
+    padding: 15px 15px 15px 40px;
+}
+
+.input-box .input-field input::placeholder {
+    color: #fff;
+}
+
+.input-box .input-field i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+}
+
+.button{
+    width: 100%;
+    height: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    margin-top: 25px;
+}
+
+@media (max-width: 455px){
+    .input-box .input-field{
+        width: 100%;
+        margin: 10px 0;
+    }
+    .signup-body{
+        min-height: 90vh;
+    }
+    .container{
+        padding: 10;
+    }
+}

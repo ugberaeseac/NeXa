@@ -1,23 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-size: 18px;
+}
+
 body{
-    background-color: #f4f4f4;
-}
-.signup{
-    min-width: 500px;
-    max-width: 800px;
-}
-
-.signupH, .loginH{
-    text-align: center;
+    padding-top: 8vh;
+    width: 100%;
+    background-color: #D1D0D1;
+    color: #f5f6f7;
+    font-family: sans-serif;
 }
 
-.login{
-    min-width: 350px;
-    max-width: 500px;
+li{
+    list-style: none;
 }
 
-.signup_container, .login_container{
+li a{
+    color: inherit;
+    text-decoration: none;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
+    justify-content: space-between;
+}
+.logo{
+    width: max(140px, 15vw);
+    aspect-ratio: 13 / 3.8;
+    padding: 0.3rem;
+}
+
+
+nav{
+    width: 50%;
+    max-width: 500px;
+    height: 8vh;
+}
+nav ul{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-inline-start: 0;
+    margin-block: 0;
+    height: 100%;
+}
+
+nav ul li{
+    margin: 0 0.2rem;
+    color: white;
+    padding: 0.2rem;
+    display: block;
+}
+nav ul li:hover{
+    color: #363688;
+    background-color: #dfdfe2;
+    cursor: pointer;
+}
+
+header, footer{
+    height: 8vh;
+    color: #f5f6f7;
+    background-color: #17172A;
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.75rem;
 }

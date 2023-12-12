@@ -10,28 +10,11 @@ li{
     list-style: none;
 }
 body{
-    padding-top: 10vh;
+    padding-top: 8vh;
     width: 100%;
     background-color: #D1D0D1;
     color: #f5f6f7;
     font-family: sans-serif;
-}
-header, footer{
-    height: 10vh;
-    background-color: #17172A;
-}
-header{
-    position: fixed;
-    width: 100%;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.logo{
-    width: max(140px, 15vw);
-    aspect-ratio: 10 / 3.5;
-    padding: 0.4rem;
 }
 
 h1, h2, h3{
@@ -60,46 +43,15 @@ h3{
     font-size: min(4vw, 1.6rem);
 }
 
-nav{
-    width: 50%;
-    max-width: 500px;
-    height: 10vh;
-}
-nav ul{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    align-items: center;
-    padding-inline-start: 0;
-    margin-block: 0;
-    height: 100%;
-}
-
-nav ul li{
-    margin: 0 0.2rem;
-    color: white;
-    padding: 0.2rem;
-    display: block;
-}
-nav ul li:hover{
-    color: #363688;
-    background-color: #dfdfe2;
-    cursor: pointer;
-}
-li a{
-    color: inherit;
-    text-decoration: none;
-}
-
 section{
     margin: 0 auto 10px auto;
 }
 
 .first_section{
-    padding-top: 10vh;
+    padding-top: 8vh;
     background-image: url("../images/fist-bumps.jpg");
     background-size: cover;
-    height: 90vh;
+    height: 92vh;
     display: flex;
     align-items: center;
     color: rgb(255, 255, 255);
@@ -136,7 +88,7 @@ section{
 
 .second_section, .third_section{
     min-height: 100vh;
-    padding-top: 10vh;
+    padding-top: 8vh;
 }
 
 .second_section{
