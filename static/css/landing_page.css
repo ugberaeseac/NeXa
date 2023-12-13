@@ -1,10 +1,12 @@
 *{
     margin: 0;
     padding: 0;
-    text-decoration: none;
     box-sizing: border-box;
     scroll-behavior: smooth;
     font-size: 18px;
+}
+a{
+    text-decoration: none;
 }
 li{
     list-style: none;
@@ -103,8 +105,7 @@ section{
     color: #17172A;
 }
 .second_section .about-heading{
-    margin-top: -0.7rem;
-    margin-bottom: 2.7rem;
+    height: 20%;
 }
 .second_section .about-heading article{
     display: flex;
@@ -128,6 +129,7 @@ section{
     width: 100%;
     background-color: grey;
     padding: 1rem 0;
+    height: 60%;
 }
 .second_section .about-left{
     flex: 2;
@@ -163,7 +165,9 @@ section{
     text-align: center;
     align-items: center;
     justify-content: center;
+    height: 20%;
 }
+
 .buttons{
     display: flex;
     justify-content: space-between;
@@ -209,15 +213,24 @@ section{
     .contact-us-form {
         flex-wrap: wrap; /* allow wrapping */
     }
-
+    .about-details{
+        flex-direction: column;
+    }
     .contact-us-left,
     .contact-us-right {
         min-height: 40vh;
-        min-width: 100%; 
+        min-width: 100%;
     }
     
     .contact-us-icons{
         padding-top: 1rem;
+    }
+
+    .button, .button-login, .button-signup{
+        font-size: 16px;
+    }
+    .button{
+        padding-left: 0.5rem;
     }
 }
 form {
@@ -270,6 +283,9 @@ fieldset{
     transition:.5s;
 }
 
+.contact-us-icons ul li a i{
+    padding-top: 1.5rem;
+}
 .contact-us-icons  ul li a span {
     position:absolute;
     transition: transform .5s;
@@ -357,8 +373,4 @@ fieldset{
     text-align: center;
     margin-top: 2rem;
     font-size: 0.75rem;
-}
-
-p{
-    font-size: 18px;
 }

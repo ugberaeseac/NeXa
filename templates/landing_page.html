@@ -8,7 +8,7 @@
             <div class="caption">
                 <h1>Connect, Learn and Share</h1>
                 <h3>NeXa The Microblogging Platform for ALX Community</h3>
-                <a href="#" class="button hover">Signup</a>
+                <a href="{{ url_for('signup')}}" class="button hover">Signup</a>
             </div>
         </section>
 
@@ -61,7 +61,7 @@
                     </article>
                 </div>
                 <div class="about-right">
-                    <img src="{{ url_for('static', filename='images/home.png') }}">
+                    <img src="{{ url_for('static', filename='images/homev2.png') }}">
                 </div>
             </div>
             
@@ -74,7 +74,7 @@
                     <div class="below-promise">
                         <h3 class="no-top">Join NeXa now and be part of a community shaping the future of ALX learners!</h3>
                         <div class="buttons">
-                            <a href="#" class="button-signup hover">Signup</a>
+                            <a href="{{ url_for('signup') }}" class="button-signup hover">Signup</a>
                             <a href="#" class="button-login hover">Login</a>
                         </div>
                     </div>
