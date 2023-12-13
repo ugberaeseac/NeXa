@@ -11,7 +11,7 @@ from flask_login import LoginManager
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://nexa_test:nexa_test_pwd@localhost:3306/nexa_test_db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://nexa_test:nexa_test_pwd@localhost/nexa_test_db'
 db = SQLAlchemy(app)
 
 bcrypt = Bcrypt(app)

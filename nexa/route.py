@@ -11,6 +11,7 @@ from nexa import bcrypt
 from nexa.form import RegistrationForm, LoginForm
 from nexa.models import User, Post, Comment
 from flask_login import login_user, current_user, logout_user, login_required
+import secrets
 
 
 posts=[{
@@ -48,6 +49,7 @@ def index():
     """
     return render_template('index.html')
 
+
 @app.route('/home')
 def home():
     """
@@ -66,17 +68,19 @@ def signup():
     """
     if current_user.is_authenticated:
         return redirect(url_for('home'))
-    form = RegistrationForm()
-    if form.validate_on_submit():
+    if request.method == 'POST':
+        print("GOT HERE!!!")
         hashed_password = bcrypt.generate_password_hash(
-                 form.password.data).decode('utf-8')
-        user = User(name=form.name.data, username=form.username.data,
-                 password=hashed_password, email=form.email.data)
+                 request.form.get('password')).decode('utf-8')
+        name = f"{request.form.get('first-name')} + {request.form.get('last-name')}"
+        user = User(name=name, username=request.form.get('username'),
+                 password=hashed_password, email=request.form.get('email'))
         db.session.add(user)
         db.session.commit()
         flash('Your account has been created successfully', 'success')
         return redirect(url_for('login'))
-    return render_template('signup.html', form=form)
+    csrf_token = secrets.token_hex(16)
+    return render_template('signup.html', csrf_token=csrf_token)
 
 
 @app.route('/login', methods=['GET', 'POST'])
