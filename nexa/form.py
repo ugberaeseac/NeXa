@@ -33,7 +33,7 @@ class RegistrationForm(FlaskForm):
         """
 
         """
-        user = User.query.filter_by(email=email.data)
+        user = User.query.filter_by(email=email.data).first()
         if user:
             raise ValidationError('Email has already been taken.')
 

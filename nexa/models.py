@@ -16,7 +16,7 @@ def load_user(user_id):
     """
     Loads a user from the database by the user id
     """
-    pass
+    return User.query.get(int(user_id))
 
 
 class User(db.Model, UserMixin):
