@@ -17,16 +17,16 @@
       <div class="row">
         <div class="column left">
             <div>
-		    <img src="{{ url_for('static', filename='images/nexa-logo.png') }}" width=50% height=50%>
+		            <img src="{{ url_for('static', filename='images/nexa-logo.png') }}" width=50% height=50%>
             </div>
             <div class="icon-bar">
-		    <a class="active" href="{{ url_for('home') }}"><i class="fa fa-home"> &ensp;Home</i></a> 
+		          <a class="active" href="{{ url_for('home') }}"><i class="fa fa-home"> &ensp;Home</i></a> 
               <a href="#"><i class="fa fa-bell"> &ensp;Notifications</i></a> 
               <a href="#"><i class="fa fa-envelope"> &ensp;Messages </i></a>
               <a href="#"><i class="fa fa-search"> &ensp;Search </i></a> 
-	      <a href="#"><i class="fa fa-user"> &ensp;Profile </i></a>
-	      <a href="{{ url_for('settings') }}"><i class="fa fa-gear"> &ensp;Settings </i></a>
-	      <a href="{{ url_for('logout') }}"><i class="fa fa-trash"> &ensp;Log out </i></a> 
+              <a href="#"><i class="fa fa-user"> &ensp;Profile </i></a>
+              <a href="{{ url_for('settings') }}"><i class="fa fa-gear"> &ensp;Settings </i></a>
+              <a href="{{ url_for('logout') }}"><i class="fa fa-trash"> &ensp;Log out </i></a> 
             </div>
 
             
@@ -35,7 +35,7 @@
             <div class="row">
                 <div class="col-75">
                     <form method="POST" action="">
-                      <textarea id="subject" name="subject" placeholder="What's on your mind..?" style="height:50px"></textarea>
+                      <textarea id="subject" name="content" placeholder="What's on your mind..?" style="height:50px"></textarea>
                       <br>
                       <button class="btn btn-outline-secondary" type="submit">Post</button>
 
@@ -49,7 +49,7 @@
                 <article class="media content-section">
                     <div class="media-body">
                     <div class="article-metadata">
-                    <span class="article-metadata"><small>{{ post.name }} &nbsp; {{ '@' + post.username }} </small></span>
+                    <span class="article-metadata"><small>{{ post.name }} &nbsp; {{ '@' + post.user.username }} </small></span>
                     
                       <small class="text-muted">{{ post.posted_at }}</small>
                     </div>

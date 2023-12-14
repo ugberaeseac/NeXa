@@ -13,7 +13,7 @@ from nexa.models import User, Post, Comment
 from flask_login import login_user, current_user, logout_user, login_required
 import secrets
 
-
+"""
 posts=[{
 	'name': 'Ugberaese Charles',
 	'username': 'charlyn',
@@ -39,7 +39,7 @@ posts=[{
 	'posted_at': '2023-12-12 11:09:01.500432'	
 	}
 	]
-
+"""
 
 @app.route('/')
 @app.route('/about')
@@ -50,12 +50,21 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/home')
+@app.route('/home', methods=['GET', 'POST'])
 def home():
     """
     home page displayed when a user is logged in
     """
     if current_user.is_authenticated:
+        if request.method == 'POST':
+            content = request.form.get('content')
+            user_id = current_user.id
+            new_post = Post(content=content, user_id=user_id)
+            db.session.add(new_post)
+            db.session.commit()
+            return redirect(url_for('home'))
+
+        posts = Post.query.order_by(Post.posted_at.desc()).all()
         return render_template('home.html', posts=posts)
     else:
         return redirect(url_for('login'))
@@ -69,7 +78,6 @@ def signup():
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     if request.method == 'POST':
-        print("GOT HERE!!!")
         hashed_password = bcrypt.generate_password_hash(
                  request.form.get('password')).decode('utf-8')
         name = f"{request.form.get('first-name')} + {request.form.get('last-name')}"
