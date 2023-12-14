@@ -8,7 +8,7 @@ from flask import render_template, flash, redirect, url_for, request
 from nexa import app
 from nexa import db
 from nexa import bcrypt
-from nexa.form import RegistrationForm, LoginForm
+from nexa.form import RegistrationForm, LoginForm, UpdateForm
 from nexa.models import User, Post, Comment
 from flask_login import login_user, current_user, logout_user, login_required
 import secrets
@@ -119,4 +119,6 @@ def settings():
     """
 
     """
-    return render_template('settings.html')
+    form = UpdateForm()
+    image_file = url_for('static', filename='images/profile_pics/' + current_user.image_file)
+    return render_template('settings.html', title='NeXa - Account Information', form=form, image_file=image_file)

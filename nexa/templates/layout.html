@@ -5,33 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Reset broswer CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/home.css') }}">
-
-    <title></title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/nexa_logo.png') }}">
   </head>
-  <body>
-	 {% with messages = get_flashed_messages(with_categories=true) %}
-	   {% if messages %}
-	     {% for category, message in messages %}
-	     <div class="alert alert-{{ category }}">
-		  {{ messages }}
-	       </div>
-	     {% endfor %}
-	   {% endif %}
-	 {% endwith %}
-  	 {% block content %}
+<body class="dark-theme">
     
-         {% endblock%}
+    {% block content%}
 
+    {% endblock content %}
 
 
     <!-- Optional JavaScript -->
