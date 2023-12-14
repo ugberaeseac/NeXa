@@ -5,6 +5,20 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+body{
+    padding-top: 8vh;
+    width: 100%;
+    background-color: #D1D0D1;
+    color: #f5f6f7;
+    font-family: sans-serif;
+}
+
 .signup-body{
     display: flex;
     justify-content: center;

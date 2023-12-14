@@ -1,8 +1,15 @@
-{% include "header.html" %}
-{% extends "base.html" %}
-{% block content %}    
-    <link href="{{ url_for('static', filename='css/landing_page.css') }}" rel="stylesheet">
-    <div class="landing_page-body">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NeXa</title>
+    <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+    {% include "header.html" %}
     <main >
         <section class="first_section">
             <div class="caption">
@@ -130,6 +137,7 @@
             
         </section>
     </main>
-</div>
 {% include "footer.html" %}
-{% endblock %}
+<script src="https://kit.fontawesome.com/e8c648621a.js" crossorigin="anonymous"></script>
+</body>
+</html>
