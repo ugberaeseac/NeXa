@@ -104,6 +104,29 @@ fieldset{
     margin-top: 25px;
 }
 
+.login{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+a{
+    color: #1616db;
+    text-decoration: none;
+}
+
+a:hover{
+    color: purple
+}
+.input-box .input-field .invalid-feedback{
+    padding-top: 0.2rem;
+    color: red;
+    font-size: 0.75rem;
+}
+.warning{
+    color: wheat;
+}
+
 @media (max-width: 600px){
     .input-box .input-field{
         width: 100%;
