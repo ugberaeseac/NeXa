@@ -1,3 +1,6 @@
+*{
+    font-size: 17px;
+}
 li{
     list-style: none;
 }
@@ -29,7 +32,7 @@ header{
 }
 .logo-name{
     padding-left: 0.7rem;
-    font-size: 4rem;
+    font-size: 2rem;
 }
 nav{
     width: 50%;
@@ -51,6 +54,7 @@ nav ul li{
     color: white;
     padding: 0.2rem;
     display: block;
+    font-size: 1rem;
 }
 nav ul li:hover{
     color: #363688;
@@ -58,18 +62,8 @@ nav ul li:hover{
     cursor: pointer;
 }
 
-header, footer{
+header{
     height: 8vh;
     color: #f5f6f7;
     background-color: #546AEF;
-}
-
-.footer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0;
-    text-align: center;
-    margin-top: 2rem;
-    font-size: 0.75rem;
 }

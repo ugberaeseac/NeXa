@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    font-size: 18px;
+    font-size: 17px;
 }
 a{
     text-decoration: none;
@@ -17,6 +17,8 @@ body{
     background-color: #D1D0D1;
     color: #f5f6f7;
     font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
 h1, h2, h3{
@@ -364,13 +366,4 @@ fieldset{
 }
 .contact-us-icons ul li .instagram:hover span { 
     background: #c32aa3;
-}
-.footer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0;
-    text-align: center;
-    margin-top: 2rem;
-    font-size: 0.75rem;
 }

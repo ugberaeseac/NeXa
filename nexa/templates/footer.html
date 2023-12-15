@@ -1,3 +1,22 @@
+<link rel="stylesheet" href=" {{ url_for('static', filename='css/footer.css') }} ">
+
 <footer class="footer">
-    Copyright © 2023 NeXa
+    <div class="item">
+        <a href=" {{ url_for('signup') }}">Signup</a>
+    </div>
+    <div class="item">
+        <a href="{{ url_for('index') }}">About</a>
+    </div>
+    <div class="item">
+    <a href="#">Help</a>
+    </div>
+    <div class="item">
+    <a href="#">Terms of Service</a>
+    </div>
+    <div class="item">
+    <a href="#">Developers</a>
+    </div>
+    <div class="item">
+    <small>NeXa © 2023</small>
+    </div>
 </footer>

@@ -1,0 +1,22 @@
+*{
+    font-size: 17px;
+}
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #546AEF;
+    height: 7vh;
+    margin-top: auto;
+}
+
+footer .item,
+footer .item a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+footer .item a:hover{
+    color: #d7d3d3;
+}

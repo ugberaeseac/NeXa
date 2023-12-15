@@ -11,47 +11,38 @@
 <title>NeXa - Log in</title>
 </head>
 <body>
-<header>
-    <div>
-    
-	    <br><br><br><br>
-    </div>
-
-</header>
-
-<br>
-<br>
-<div class="container">
-  <form method="POST" action="">
-	  {{ form.hidden_tag()  }}
-    <div class="row">
-      
-      <div class="vl">
-        <span class="vl-innertext"></span>
-      </div>
-
-      <div class="col">
-	      <a href="home"><img src="{{ url_for ('static', filename='images/logo_water_2_whitebg.png') }}"></a>
-           <h6 class="phrase">Nexa helps you connect with ALX students <br> and alumni for collaboration, mentorship <br> and knowledge-sharing.</h6>
+  <div class="container">
+    <form method="POST" action="">
+      {{ form.hidden_tag()  }}
+      <div class="row">
         
-      </div>
+        <div class="vl">
+          <span class="vl-innertext"></span>
+        </div>
 
-      <div class="col">
-	<div class=form-group">
-	<fieldset>
+        <div class="col">
+          <a href="home"><img src="{{ url_for ('static', filename='images/logo_water_2_whitebg.png') }}"></a>
+            <h6 class="phrase">Nexa helps you connect with ALX students <br> and alumni for collaboration, mentorship <br> and knowledge-sharing.</h6>
+          
+        </div>
+
+  <div class="col">
+    <div class=form-group">
+      <fieldset>
 	      {{ form.email(placeholder="Email Password") }}
 	      {{ form.password(placeholder="Password") }}
-	      <div>
-	      {{ form.remember(class="form-check-label") }} Remember me
+	      <div class="d-inline">
+	        {{ form.remember() }} Remember me
 	      </div>
 
-	      {{ form.submit(class="") }}
-       <hr> 
+          {{ form.submit(class="") }}
+          <hr> 
 
 	</fieldset>
         Don't have an account? <a href="{{ url_for('signup') }}">Sign up</a>
       </div>
-      </div>
+    </div>
+      
       
     </div>
   </form>
