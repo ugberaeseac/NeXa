@@ -16,12 +16,21 @@ header{
     justify-content: space-between;
 }
 .logo{
-    width: max(140px, 15vw);
-    aspect-ratio: 13 / 3.8;
-    padding: 0.3rem;
+    width: max(70px, 7vw);
+    aspect-ratio: 6 / 3.6;
+    padding: 0;
 }
 
-
+.logos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.logo-name{
+    padding-left: 0.7rem;
+    font-size: 4rem;
+}
 nav{
     width: 50%;
     max-width: 500px;
@@ -52,7 +61,7 @@ nav ul li:hover{
 header, footer{
     height: 8vh;
     color: #f5f6f7;
-    background-color: #17172A;
+    background-color: #546AEF;
 }
 
 .footer{
