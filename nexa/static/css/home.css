@@ -25,18 +25,34 @@
   ========================================
 */
 
-body {
-  
-}
-
-
-body.dark-theme {
-  font-family: Arial, Helvetica, sans-serif;
+.icon-bar i{
+  font-family: "Open Sans", sans-serif;
   margin: 0px;
   background-color: #000000;
   color: #FFFFFF;
 }
 
+
+body.dark-theme {
+  font-family: "Open Sans", sans-serif;
+  margin: 0px;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.content-section {
+  background: #000000;
+  padding: 10px 20px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
 
 .column {
   float: left;
@@ -44,14 +60,12 @@ body.dark-theme {
 }
 
 .left, .right {
-  width: 25%;
+  width: 20%;
 }
 
 .middle {
-  width: 50%;
-  padding-left: 30px;
-  border-left: 0.5px solid rgba(255, 255, 255, 25.0%);
-  border-right: 0.5px solid rgba(255, 255, 255, 25.0%);
+  width: 55%;
+  padding-left: 15px;
 }
 
 
@@ -68,7 +82,6 @@ body.dark-theme {
   padding: 16px;
   transition: all 0.3s ease;
   color: #FFFFFF;
-  font-family: "Lato", sans-serif;
   font-size: 20px;
 }
 

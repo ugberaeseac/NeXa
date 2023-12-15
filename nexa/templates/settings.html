@@ -1,6 +1,104 @@
 {% extends 'layout.html' %}
 {% block content %}
-<h1>{{ current_user.name }}</h1>
-<h3>{{ current_user.username }}</h3>
-<h5>{{ current_user.email }}</h5>
+
+        <div class="container">
+              <div class="row">
+                <div class="column left">
+                    <div>
+                    <img src="{{ url_for('static', filename='images/nexa-logo.png') }}" width=50% height=50%>
+                    </div>
+                    <div class="icon-bar">
+                    <a class="active" href="{{ url_for('home') }}"><i class="fa fa-home"> &ensp;Home</i></a>
+                      <a href="#"><i class="fa fa-bell"> &ensp;Notifications</i></a>
+                      <a href="#"><i class="fa fa-envelope"> &ensp;Messages </i></a>
+                      <a href="#"><i class="fa fa-search"> &ensp;Search </i></a>
+   	              <a href="#"><i class="fa fa-user"> &ensp;Profile </i></a>
+        	      <a href="{{ url_for('settings') }}"><i class="fa fa-gear"> &ensp;Settings </i></a>
+             		<a href="{{ url_for('logout') }}"><i class="fa fa-trash"> &ensp;Log out </i></a>
+                    </div>
+
+
+                </div>
+                <div class="column middle border-left border-right  border-dark">
+		
+		<div class="content-section">
+		    <div class="media border-bottom-1">
+			    <img class="rounded-circle account-img" src="{{ image_file }}">
+		      <div class="media-body">
+		        <h3 class="mt-0">{{ current_user.name }}</h3>
+		        <h6 class="mt-0">{{ '@' + current_user.username }}</h6>
+		        <p class="mt-0 text-secondary">{{ current_user.email }} </p>
+		      </div>
+		   </div>
+		   <form method="POST" action="" enctype="multipart/form-data">
+		    {{ form.hidden_tag() }}
+		    <fieldset>
+			<legend class="border-bottom border-dark mb-4">Account Information </legend>
+			<div class="form-group">
+			{{ form.name.label(class="form-control-label") }}
+			{% if form.name.errors  %}
+				{{ form.name(class="form-control form-control-lg border is-invalid") }}
+				<div class="invalid-feedback">
+					{% for error in form.name.errors %}
+						<span> {{ error }}
+					{% endfor %}
+				</div>
+			{% else %}
+			{{ form.name(class="form-control form-control-lg border") }}
+			{% endif %}
+			</div>
+                        <div class="form-group">
+                        {{ form.username.label(class="form-control-label") }}
+                        {% if form.username.errors  %}
+                                {{ form.username(class="form-control form-control-lg border is-invalid") }}
+                                <div class="invalid-feedback">
+                                        {% for error in form.username.errors %}
+					<span> {{ error }} </span>
+                                        {% endfor %}
+                                </div>
+                        {% else %}
+                        {{ form.username(class="form-control form-control-lg border") }}
+                        {% endif %}
+                        </div>
+
+                        <div class="form-group">
+                        {{ form.email.label(class="form-control-label") }}
+                        {% if form.email.errors  %}
+                                {{ form.email(class="form-control form-control-lg border is-invalid") }}
+                                <div class="invalid-feedback">
+                                        {% for error in form.email.errors %}
+					<span> {{ error }} </span>
+                                        {% endfor %}
+                                </div>
+                        {% else %}
+                        {{ form.email(class="form-control form-control-lg border") }}
+                        {% endif %}
+                        </div>
+
+                        <div class="form-group">
+                        {{ form.picture.label() }}
+                        {{ form.picture(class="form-control-file is-invalid") }}
+			{% if form.picture.errors  %}
+                             {% for error in form.picture.errors %}
+                                     <span class="text-danger"> {{ error }} </span>
+	                     {% endfor %}
+                        {% endif %}
+                        </div>
+
+		    </fieldset>
+		    	<br><br>
+		        <div class="form-group">
+                        {{ form.save(class="btm form-control") }}
+                        </div>
+		  </form>
+                </div>
+
+                <div class="column right">
+
+
+
+                </div>
+            </div>
+        </div>
+
 {% endblock content%}
