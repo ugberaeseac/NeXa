@@ -77,18 +77,18 @@ def signup():
     """
     if current_user.is_authenticated:
         return redirect(url_for('home'))
-    if request.method == 'POST':
+    form = RegistrationForm()
+    if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(
-                 request.form.get('password')).decode('utf-8')
-        name = f"{request.form.get('first-name')} + {request.form.get('last-name')}"
-        user = User(name=name, username=request.form.get('username'),
-                 password=hashed_password, email=request.form.get('email'))
+                 form.password.data).decode('utf-8')
+        name = f"{form.first_name.data} + {form.last_name.data}"
+        user = User(name=name, username=form.username.data,
+                 password=hashed_password, email=form.email.data)
         db.session.add(user)
         db.session.commit()
         flash('Your account has been created successfully', 'success')
         return redirect(url_for('login'))
-    csrf_token = secrets.token_hex(16)
-    return render_template('signup.html', csrf_token=csrf_token)
+    return render_template('signup.html', form=form)
 
 
 @app.route('/login', methods=['GET', 'POST'])

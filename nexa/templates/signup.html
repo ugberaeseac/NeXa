@@ -22,38 +22,98 @@
         <form id="signup_form" action="/signup" method="post">
             <h1>Signup</h1>
             <fieldset>
+                {{ form.hidden_tag() }}
                 <div class="input-box">
                     <div class="input-field">
-                        <input id="first-name" name="first-name" type="text" placeholder="First Name" pattern="[a-zA-Z0-9 ]{3,}" required>
-                        <i class="ph ph-user"></i>
+                        {% if form.first_name.errors %}
+                        {{ form.first_name(id="first-name", placeholder="First Name", class="invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.first_name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                            {{ form.first_name(id="first-name", placeholder="First Name") }}
+                            <i class="ph ph-user"></i>
+                        {% endif %}
                     </div>
                     <div class="input-field">
-                        <input id="last-name" name="last-name" type="text" placeholder="Last Name" pattern="[a-zA-Z0-9 ]{3,}" required >
-                        <i class="ph ph-user"></i>
+                        {% if form.last_name.errors %}
+                        {{ form.last_name(id="last-name", placeholder="Last Name", class="invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.last_name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                            {{ form.last_name(id="last-name", placeholder="Last Name") }}
+                            <i class="ph ph-user"></i>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="input-box">
                     <div class="input-field">
-                        <input id="user-name" name="username" type="text" placeholder="Username" pattern="[a-zA-Z0-9_]{6,}" required >
-                        <i class="ph ph-user"></i>
+                        {% if form.username.errors %}
+                        {{ form.username(id="user-name", placeholder="Username") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.username.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                            {{ form.username(id="user-name", placeholder="Username") }}
+                            <i class="ph ph-user"></i>
+                        {% endif %}
                     </div>
                     <div class="input-field">
-                        <input id="email" name="email" type="email" placeholder="Email" required >
-                        <i class="ph ph-envelope"></i>
+                        {% if form.email.errors %}
+                        {{ form.email(id="email", placeholder="Email") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                            {{ form.email(id="email", placeholder="Email") }}
+                            <i class="ph ph-envelope"></i>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="input-box">
                     <div class="input-field">
-                        <input id="password" name="password" type="password" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" required >
-                        <i class="ph ph-lock"></i>
+                        {% if form.password.errors %}
+                        {{ form.password(id="password", placeholder="Password") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                            {{ form.password(id="password", placeholder="Password") }}
+                            <i class="ph ph-lock"></i>
+                        {% endif %}
                     </div>
                     <div class="input-field">
-                        <input id="confirm_password" name="confirm_password" type="password" placeholder="Confirm password" required >
-                        <i class="ph ph-lock"></i>
-                        <p class="password_msg"></p>
+                        {% if form.confirm_password.errors %}
+                        {{ form.confirm_password(id="confirm_password", placeholder="Confirm Password") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.confirm_password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                            {{ form.confirm_password(id="confirm_password", placeholder="Confirm Password") }}
+                            <i class="ph ph-lock"></i>
+                            <span class="password_msg warning"></span>
+                        {% endif %}
                     </div>
                 </div>
-                <input class="button" name="signup" type="submit" value="Signup">
+                {{ form.submit(class="button")}}
+                <div class="login">
+                    <small>
+                        Already Have An Account? <a href="{{ url_for('login') }}">Log In</a>
+                    </small>
+                </div>
             </fieldset>
         </form>
     </div>
