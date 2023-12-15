@@ -26,7 +26,6 @@
 */
 
 .icon-bar i{
-  font-family: "Open Sans", sans-serif;
   margin: 0px;
   background-color: #000000;
   color: #FFFFFF;
@@ -82,7 +81,7 @@ body.dark-theme {
   padding: 16px;
   transition: all 0.3s ease;
   color: #FFFFFF;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .icon-bar a:hover {
