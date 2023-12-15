@@ -32,6 +32,14 @@
 
                         <a href="{{ url_for('settings') }}"><i class="fa fa-gear"> &ensp;Settings </i></a>
                         <a href="{{ url_for('logout') }}"><i class="fa fa-trash"> &ensp;Log out </i></a>
+			<br><br>
+			<div class=" media border-top-1">
+				<img class="rounded-circle bottom-img" src="{{ url_for('static', filename='images/profile_pics/' + current_user.image_file) }}">
+	        	        <div class="media-body">
+	                	<h6 class="mt-0">{{ current_user.name }}</h6>
+				<small class="mt-0 text-secondary">{{ '@' + current_user.username }}</small>
+	                      </div>
+        	        </div>
                     </div>
                 </div>
 

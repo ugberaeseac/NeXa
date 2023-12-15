@@ -53,6 +53,12 @@ body.dark-theme {
   margin-bottom: 16px;
 }
 
+.bottom-img {
+  height: 40px;
+  width: 40px;
+  margin-right: 16px;
+}
+
 .column {
   float: left;
   padding: 10px;
@@ -98,7 +104,7 @@ body.dark-theme {
   border: 0.5px solid rgba(255, 255, 255, 25.0%);
 }
 
-input[type=text], textarea {
+input[type=text], textarea{
   width: 100%;
   padding: 12px;
   border: 0px solid #ccc;

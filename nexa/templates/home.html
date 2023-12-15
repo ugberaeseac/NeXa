@@ -1,34 +1,46 @@
 {% extends 'layout.html' %}
 {% block content %}
         
-	<div class="column middle border-left border-right  border-dark">
-            <div class="row">
-                <div class="col-75">
-                    <form method="POST" action="">
-                      <textarea id="subject" name="content" placeholder="What's on your mind..?" style="height:50px"></textarea>
-                      <br>
-                      <button class="btn btn-outline-secondary" type="submit">Post</button>
-
-                  </form>
-                <div>
-
+<div class="column middle border-left border-right  border-dark">
+<div class="content-section">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <div class="form-group">
+                {% if form.content.errors %}
+                    {{ form.content(class="form-control form-control-lg  is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.content.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.content(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
                 <div>
                     <br>
                 </div>
-                {% for post in posts  %}
-                <article class="media content-section">
-                    <div class="media-body">
-                    <div class="article-metadata">
-                    <span class="article-metadata"><small>{{ post.name }} &nbsp; {{ '@' + post.user.username }} </small></span>
-
-                      <small class="text-muted">{{ post.posted_at }}</small>
-                    </div>
-                    <p class="article-content">{{ post.content }}</p>
-                    <hr class="hz-line">
-                    </div>
-                </article>
-                {% endfor %}
+    {% for post in posts %}
+        <article class="media content-section border-top border-bottom border-dark">
+          <img class="rounded-circle bottom-img" src="{{ url_for('static', filename='images/profile_pics/' + post.user.image_file) }}">
+          <div class="media-body">
+            <div class="article-metadata">
+		    <b>{{ post.user.name }}</b>&ensp;<span class="text=muted">{{ '@' + post.user.username }}</span> &centerdot;
+              <small class="text-muted">{{ post.posted_at.strftime('%b %d, %Y') }}</small>
             </div>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+        </article>
+    {% endfor %}            
+
+</div>
         </div>
 
         <div class="column right">
