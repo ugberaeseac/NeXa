@@ -5,6 +5,7 @@
 
 
 from flask import render_template, flash, redirect, url_for, request
+from PIL import Image
 from nexa import app
 from nexa import db
 from nexa import bcrypt
@@ -157,6 +158,10 @@ def save_upload_photo(picture):
     _, file_ext = os.path.splitext(picture.filename)
     picture_filename = hex_random + file_ext
     picture_path = os.path.join(app.root_path, 'static/images/profile_pics', picture_filename)
-    picture.save(picture_path)
+
+    size = (125, 125)
+    image = Image.open(picture)
+    image.thumbnail(size)
+    image.save(picture_path)
     return picture_filename
 
