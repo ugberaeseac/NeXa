@@ -165,3 +165,10 @@ def save_upload_photo(picture):
     image.save(picture_path)
     return picture_filename
 
+
+@app.route('/profile', methods=['GET', 'POST'])
+def profile():
+    """
+
+    """
+    return render_template('profile.html')

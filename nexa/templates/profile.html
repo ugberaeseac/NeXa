@@ -1,1 +1,40 @@
-This is profile page
+{% extends 'layout.html' %}
+{% block content %}
+
+
+        <div class="column middle border-left border-right  border-dark">
+        
+	<div class="profilecard media">
+            <div class="infoimages">
+                <img src="cover.jpg">
+                <img src="profile.jpg">
+            </div>
+            <div class="profileinfo media-body">
+                <span>Readersnepal</span>
+                <span>E-library</span>
+        </div>
+	
+
+	</div>
+
+    
+	<br>
+   <div class="tab">
+          <button class="tablinks" onclick="openCity(event, 'Posts')">Posts</button>
+          <button class="tablinks" onclick="openCity(event, 'Replies')">Replies</button>
+          <button class="tablinks" onclick="openCity(event, 'Media')">Media</button>
+    </div>
+
+    <div id="Posts" class="tabcontent">
+          <h3>Posts</h3>
+          <p>This is where all Posts a user has made will be displayed.</p>
+    </div>
+
+        <div class="column right">
+
+
+
+
+        </div>
+
+{% endblock content%}
