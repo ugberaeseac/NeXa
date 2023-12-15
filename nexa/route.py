@@ -39,10 +39,10 @@ def home():
             db.session.add(post)
             db.session.commit()
             return redirect(url_for('home'))
-        else:
-            posts = Post.query.order_by(Post.posted_at.desc()).all()
-    return render_template('home.html', form=form, posts=posts)
-
+        posts = Post.query.order_by(Post.posted_at.desc()).all()
+        return render_template('home.html', form=form, posts=posts)
+    else:
+        return redirect(url_for('login'))
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
