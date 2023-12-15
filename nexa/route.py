@@ -12,6 +12,8 @@ from nexa.form import RegistrationForm, LoginForm, UpdateForm
 from nexa.models import User, Post, Comment
 from flask_login import login_user, current_user, logout_user, login_required
 import secrets
+import os
+
 
 """
 posts=[{
@@ -81,7 +83,7 @@ def signup():
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(
                  form.password.data).decode('utf-8')
-        name = f"{form.first_name.data} + {form.last_name.data}"
+        name = f"{form.first_name.data}" + " " + f"{form.last_name.data}"
         user = User(name=name, username=form.username.data,
                  password=hashed_password, email=form.email.data)
         db.session.add(user)
@@ -129,10 +131,13 @@ def settings():
     """
     form = UpdateForm()
     if form.validate_on_submit():
+        if form.picture.data:
+            photo_filename = save_upload_photo(form.picture.data)
+            current_user.image_file = photo_filename
         current_user.name = form.name.data
         current_user.username = form.username.data
         current_user.email = form.email.data
-        db.session.add(current_user)
+        """db.session.add(current_user)"""
         db.session.commit()
         flash('Your account has been updated!', 'success')
         return redirect(url_for('settings'))
@@ -142,3 +147,16 @@ def settings():
         form.email.data = current_user.email
     image_file = url_for('static', filename='images/profile_pics/' + current_user.image_file)
     return render_template('settings.html', title='NeXa - Account Information', form=form, image_file=image_file)
+
+
+def save_upload_photo(picture):
+    """
+
+    """
+    hex_random = secrets.token_hex(8)
+    _, file_ext = os.path.splitext(picture.filename)
+    picture_filename = hex_random + file_ext
+    picture_path = os.path.join(app.root_path, 'static/images/profile_pics', picture_filename)
+    picture.save(picture_path)
+    return picture_filename
+
