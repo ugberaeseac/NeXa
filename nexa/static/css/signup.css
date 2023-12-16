@@ -47,8 +47,8 @@ body{
     padding: 40px 35px 55px;
 }
 .container h1{
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 fieldset{
     border: none;
@@ -133,7 +133,7 @@ fieldset{
     color: wheat;
 }
 
-@media (max-width: 600px){
+@media screen and (max-width: 650px){
     .input-box .input-field{
         width: 100%;
         margin: 10px 0;
@@ -142,6 +142,16 @@ fieldset{
         min-height: 90vh;
     }
     .container{
-        padding: 10;
+        margin: auto;
+        padding: 1rem;
+        padding: 1.3rem 1rem 1.5rem;
     }
+    .input-box .input-field input{
+        padding: 0.8rem 0.8rem 0.8rem 2.2rem;
+    }
+    .input-box .input-field{
+        height: 2.2rem;
+        margin: 13px 0;
+    }
+    
 }

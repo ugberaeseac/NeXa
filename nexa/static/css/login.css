@@ -114,5 +114,7 @@ input[type=submit]:hover {
   .vl {
     display: none;
   }
-
+  .col h6{
+    font-size: 1.2rem;
+  }
 }

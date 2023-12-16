@@ -67,3 +67,34 @@ header{
     color: #f5f6f7;
     background-color: #546AEF;
 }
+
+.menu-toggle{
+    display: none;
+    padding-right: 1rem;
+}
+
+@media screen and (max-width: 650px) {
+    header .menu-toggle{
+        display: block;
+        cursor: pointer;
+    }
+
+    nav ul{
+        display: none;
+    }
+
+    nav ul.show{
+        display: block;
+    }
+    
+    .logo{
+        width: max(70px, 7vw);
+        aspect-ratio: 15 / 9.5;
+        padding: 0;
+    }
+    header{
+        height: 6vh;
+        color: #f5f6f7;
+        background-color: #546AEF;
+    }
+}

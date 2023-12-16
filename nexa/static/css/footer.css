@@ -20,3 +20,9 @@ footer .item a{
 footer .item a:hover{
     color: #d7d3d3;
 }
+
+@media screen and (max-width: 650px){
+    footer{
+        flex-wrap: wrap;
+    }
+}
