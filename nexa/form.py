@@ -6,7 +6,7 @@
 
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
-from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from flask_login import current_user
 from nexa.models import User
@@ -78,3 +78,11 @@ class UpdateForm(FlaskForm):
             user = User.query.filter_by(email=email.data).first()
             if user:
                 raise ValidationError('Email has already been taken.')
+
+
+class PostForm(FlaskForm):
+    """
+    form to create posts
+    """
+    content = TextAreaField('Post', validators=[DataRequired()])
+    submit = SubmitField('Post')

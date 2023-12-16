@@ -9,40 +9,12 @@ from PIL import Image
 from nexa import app
 from nexa import db
 from nexa import bcrypt
-from nexa.form import RegistrationForm, LoginForm, UpdateForm
+from nexa.form import RegistrationForm, LoginForm, UpdateForm, PostForm
 from nexa.models import User, Post, Comment
 from flask_login import login_user, current_user, logout_user, login_required
 import secrets
 import os
 
-
-"""
-posts=[{
-	'name': 'Ugberaese Charles',
-	'username': 'charlyn',
-	'content': 'NeXa is the ultimate social network for ALX students and alumni',
-	'posted_at': '2023-12-12 10:49:32.145223'
-	},
-	{
-	'name': 'Akanni Williams',
-	'username': 'akanni',
-	'content': 'I had a similar thing happen to me couple months back lol, Not a nice experience lol',
-	'posted_at': '2023-12-12 10:50:11.032323'
-	},
-	{
-	'name': 'Mounssif nuuX BOUHLAOUI',
-	'username': 'nuuxcode',
-	'content': 'If ur discord is affected go to Authorized Apps and delete everything u dont know..',
-	'posted_at': '2023-12-12 10:52:42.243398'	
-	},
-	{
-	'name': 'Sabah Hasbi',
-	'username': 'sabah',
-	'content': 'Need help with python? send a DM',
-	'posted_at': '2023-12-12 11:09:01.500432'	
-	}
-	]
-"""
 
 @app.route('/')
 @app.route('/about')
@@ -53,25 +25,24 @@ def index():
     return render_template('index.html')
 
 
+@login_required
 @app.route('/home', methods=['GET', 'POST'])
 def home():
     """
     home page displayed when a user is logged in
+    A user can view, create, edit and delete posts
     """
+    form = PostForm()
     if current_user.is_authenticated:
         if request.method == 'POST':
-            content = request.form.get('content')
-            user_id = current_user.id
-            new_post = Post(content=content, user_id=user_id)
-            db.session.add(new_post)
+            post = Post(content=form.content.data, user=current_user)
+            db.session.add(post)
             db.session.commit()
             return redirect(url_for('home'))
-
         posts = Post.query.order_by(Post.posted_at.desc()).all()
-        return render_template('home.html', posts=posts)
+        return render_template('home.html', form=form, posts=posts)
     else:
         return redirect(url_for('login'))
-
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
