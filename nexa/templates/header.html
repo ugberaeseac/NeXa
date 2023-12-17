@@ -1,14 +1,18 @@
 <link href="{{ url_for('static', filename='css/header.css') }}" rel="stylesheet">
 <header>
-    <a href="{{ url_for('index') }}">
-        <img class="logo" src="{{ url_for('static', filename='images/nexa-logo.png') }}" alt="NeXa's Logo">
+    <a class="logos" href="{{ url_for('index') }}">
+        <img class="logo" src="{{ url_for('static', filename='images/logo_royal_2.png') }}" alt="NeXa's Logo">
+        <!--<h1 class="logo-name">NeXa</h1>-->
     </a>
     <nav>
         <ul>
-            <li class="about"><a href="#second_section">ABOUT</a></li>
-            <li class="contactUs"><a href="#third_section">CONTACT US</a></li>
-            <li class="Signup"><a href="{{ url_for('signup') }}">SIGNUP</a></li>
+            {% if request.endpoint != 'signup' %}
+                <li class="contactUs"><a href="#third_section">CONTACT US</a></li>
+                <li class="Signup"><a href="{{ url_for('signup') }}">SIGNUP</a></li>
+            {% endif %}
             <li class="login"><a href="{{ url_for('login') }}">LOGIN</a></li>
         </ul>
     </nav>
+    <div class="menu-toggle">&#9776;</div>
 </header>
+<script src="{{ url_for('static', filename='js/header.js') }}"></script>

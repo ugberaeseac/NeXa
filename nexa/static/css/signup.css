@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 *{
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-size: 18px;
 }
 a{
     text-decoration: none;
@@ -14,21 +14,21 @@ li{
 body{
     padding-top: 8vh;
     width: 100%;
-    background-color: #D1D0D1;
     color: #f5f6f7;
     font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: linear-gradient(to right, #ffffff, #ffffff);
 }
-
 .signup-body{
+    height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 92vh;
-    padding: 8vh;
+    margin-top: auto;
     /*background-color: #10174a;
     background-image: url("../../images/gradient-blue-bg.jpg");
     background-size: cover;*/
-    background-image: linear-gradient(to right, #6262de, #17172A, #1616db);
 }
 
 .container{
@@ -36,19 +36,21 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #fff;
-    width: 700px;
+    color: #000000;
+    width: 680px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    background-color: rgba(255, 255, 255, .1);
-    border: 2px solid rgba(255, 255, 255, .1);
+    box-shadow: 0 0 10px rgba(110, 110, 110, 0.1);
+    background-color: rgba(214, 210, 210, 0.1);
+    border: 2px solid rgba(110, 110, 110, 0.1);
     backdrop-filter: blur(50px);
-    padding: 40px 35px 55px;
-    margin: 0 10px;
+    padding: 40px 40px 55px;
+}
+#signup_form{
+    width: 100%
 }
 .container h1{
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 fieldset{
     border: none;
@@ -66,22 +68,27 @@ fieldset{
     margin: 13px 0;
 }
 
+.input-box .input-field span{
+    font-size: 00.8rem}
+
 .input-box .input-field input{
     width: 100%;
     height: 100%;
     background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
+    border: 2px solid rgba(0, 0, 255, .2);
     outline: none;
-    color: #fff;
+    color: #000;
     font-size: 16px;
     border-radius: 6px;
     padding: 15px 15px 15px 40px;
 }
 
 .input-box .input-field input::placeholder {
-    color: #fff;
+    color: #000;
 }
-
+.input-box .input-field input:focus {
+    border-color: rgba(0, 0, 255, .5);
+}
 .input-box .input-field i{
     position: absolute;
     top: 50%;
@@ -89,33 +96,38 @@ fieldset{
     left: 15px;
 }
 
+
 .button{
     width: 100%;
     height: 40px;
-    background: #fff;
+    background: #546AEF;
     border: none;
     outline: none;
     border-radius: 6px;
-    box-shadow: rgba(0, 0, 0, .1);
+    box-shadow: rgba(255, 255, 255, .1);
     cursor: pointer;
     font-size: 16px;
-    color: #333;
+    color: #fff;
     font-weight: 600;
     margin-top: 25px;
 }
 
-.login{
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    color: #fff;
+.button:hover{
+    background-color: #17172B;
 }
 
-a{
+.login-link{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #000;
+}
+
+.login-link a{
     color: #1616db;
     text-decoration: none;
 }
 
-a:hover{
+.login-link a:hover{
     color: purple
 }
 .input-box .input-field .invalid-feedback{
@@ -124,10 +136,10 @@ a:hover{
     font-size: 0.75rem;
 }
 .warning{
-    color: wheat;
+    color: black;
 }
 
-@media (max-width: 600px){
+@media screen and (max-width: 650px){
     .input-box .input-field{
         width: 100%;
         margin: 10px 0;
@@ -136,6 +148,16 @@ a:hover{
         min-height: 90vh;
     }
     .container{
-        padding: 10;
+        margin: auto;
+        padding: 1rem;
+        padding: 1.3rem 1rem 1.5rem;
     }
+    .input-box .input-field input{
+        padding: 0.8rem 0.8rem 0.8rem 2.2rem;
+    }
+    .input-box .input-field{
+        height: 2.2rem;
+        margin: 13px 0;
+    }
+    
 }

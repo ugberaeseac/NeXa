@@ -6,7 +6,8 @@
     <title>NeXa</title>
     <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/nexa_logo.png') }}">
+</head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body>
     {% include "header.html" %}
@@ -20,72 +21,55 @@
         </section>
 
         <section id="second_section" class="second_section">
-            <div class="about-heading">
-                <article>
-                    <h2>NeXa - Empowering ALX Community</h2><br/>
-                    <p>NeXa is the central hub for ALX learners, alumni, and mentors—a platform designed for seamless connections and collaborative learning.</p>
-                </article>
-            </div>
-            <div class="about-details">
-                <div class="about-left">
-                    <article>
-                        <div class="highlight">
-                            <h3>Key Highlights:</h3>
-                            <ul>
-                                <li><p>Connect & Collaborate: <span class="details"> 
-                                    Engage in vibrant discussions, seek guidance, and share insights within the ALX community.
-                                </span></p></li>
-                                <li><p>Mentorship Opportunities: <span class="details">
-                                    Access invaluable guidance from experienced mentors, shaping your journey towards success.
-                                </span></p></li>
-                                <li><p>Tailored Experience: <span class="details">
-                                    Personalized user profiles and feeds ensure a relevant and user-centric experience.
-                                </span></p></li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article>
-                        <div class="benefit">
-                            <h3>How NeXa Benefits You:</h3>
-                            <ul>
-                                <li>
-                                    <p>Students:<span class="details">
-                                        Enhance learning by exchanging ideas and gaining mentorship from industry experts.
-                                    </span></p>
-                                </li>
-                                <li>
-                                    <p>Alumni:<span class="details">
-                                        Stay connected, share experiences, and guide the next generation of professionals.
-                                    </span></p>
-                                </li>
-                                <li>
-                                    <p>Mentors:<span class="details">
-                                        Offer support, advice, and networking opportunities to aspiring ALX members.
-                                    </span></p>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
+            <div class="showcase">
+                <div class="details">
+                    <h2>Sign Up for an Adventure</h2>
+                    <p>Begin your journey by signing up for a NeXa account. 
+                        Join the vibrant ALX community and unlock a world of collaborative learning and mentorship.</p>
                 </div>
-                <div class="about-right">
-                    <img src="{{ url_for('static', filename='images/homev2.png') }}">
+                <div class="image">
+                    <img src=" {{ url_for('static', filename='images/signup.png') }}" alt="signup image">
                 </div>
             </div>
-            
-            <div class="promises">
-                <article>
-                    <div class="promise">
-                        <h2>Our Promise</h2>
-                        <p class="details">NeXa is committed to fostering an inclusive, supportive, and dynamic learning environment for every ALX community member.</p>
-                    </div>
-                    <div class="below-promise">
-                        <h3 class="no-top">Join NeXa now and be part of a community shaping the future of ALX learners!</h3>
-                        <div class="buttons">
-                            <a href="{{ url_for('signup') }}" class="button-signup hover">Signup</a>
-                            <a href="#" class="button-login hover">Login</a>
-                        </div>
-                    </div>
-                </article>
+            <div class="showcase">
+                <div class="details">
+                    <h2>Dynamic Timeline Exploration</h2>
+                    <p>Step into a dynamic timeline upon logging in, a space filled with thought-provoking discussions, 
+                        peer interactions, and valuable insights waiting to be explored.</p>
+                </div>
+                <div class="image">
+                    <img src=" {{ url_for('static', filename='images/login.png') }}" alt="signup image">
+                </div>
+            </div>
+            <div class="showcase">
+                <div class="details">
+                    <h2>Personalize Your Vibe</h2>
+                    <p>Tailor your NeXa profile to reflect your unique personality. 
+                        Customize your information, showcase your interests, and create a space that truly represents you.</p>
+                </div>
+                <div class="image">
+                    <img src=" {{ url_for('static', filename='images/settings.png') }}" alt="signup image">
+                </div>
+            </div>
+            <div class="showcase">
+                <div class="details">
+                    <h2>Express with Posts</h2>
+                    <p>Your platform to freely express! Share thoughts, ideas, and experiences 
+                        through posts, be an active voice within the ALX community.</p>
+                </div>
+                <div class="image">
+                    <img src=" {{ url_for('static', filename='images/homev3.png') }}" alt="signup image">
+                </div>
+            </div>
+            <div class="showcase">
+                <div class="details">
+                    <h2>Seamless Logout</h2>
+                    <p>Take breaks hassle-free. Sign off whenever you please—your convenience matters to us, 
+                        ensuring a seamless user experience.</p>
+                </div>
+                <div class="image">
+                    <img src=" {{ url_for('static', filename='images/userprofilev2.png') }}" alt="signup image">
+                </div>
             </div>
         </section>
         <section id="third_section" class="third_section">
