@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans">
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/nexa_logo.png') }}">
+
+    {% if title %}
+	<title> {{ title }} </title>
+    {% else %}
+	<title> NeXa </title>
+    {% endif %}
   </head>
 <body class="dark-theme">
 
@@ -31,7 +37,7 @@
                         <a href="{{ url_for('profile') }}"><i class="fa fa-user"> &ensp;Profile </i></a>
 
                         <a href="{{ url_for('settings') }}"><i class="fa fa-gear"> &ensp;Settings </i></a>
-                        <a href="{{ url_for('logout') }}"><i class="fa fa-trash"> &ensp;Log out </i></a>
+			<a href="{{ url_for('logout') }}"><i class="fa fa-sign-out"> &ensp;Log out </i></a>
 			<br><br>
 			<div class=" media border-top-1">
 				<img class="rounded-circle bottom-img" src="{{ url_for('static', filename='images/profile_pics/' + current_user.image_file) }}">

@@ -2,39 +2,49 @@
 {% block content %}
 
 
-        <div class="column middle border-left border-right  border-dark">
-        
-	<div class="profilecard media">
-            <div class="infoimages">
-                <img src="cover.jpg">
-                <img src="profile.jpg">
-            </div>
-            <div class="profileinfo media-body">
-                <span>Readersnepal</span>
-                <span>E-library</span>
-        </div>
-	
+<div class="column middle border-left border-right  border-dark">
+<div class="profile-card fixed-left">
+  <img  src="{{ url_for('static', filename='images/profile_pics/' + current_user.image_file) }}" alt="">
+  <h3 class="mt-0">{{ current_user.name }}</h3>
+  <h6 class="mt-0">{{ '@' + current_user.username }}</h6>
+  <small class="mt-0 text-secondary">{{ current_user.email }} </h6>
+  <div style="margin: 24px 0;">
+  <i class="fa fa-calendar">&nbsp; {{ current_user.created_at.strftime('%b %Y') }}</i>
+  </div>
 
-	</div>
-
-    
-	<br>
-   <div class="tab">
-          <button class="tablinks" onclick="openCity(event, 'Posts')">Posts</button>
-          <button class="tablinks" onclick="openCity(event, 'Replies')">Replies</button>
-          <button class="tablinks" onclick="openCity(event, 'Media')">Media</button>
+</div> 
+    <br>
+    <div class="border-bottom border-dark tab">
+        <button class="tablinks" onclick="openCity(event, 'Posts')">Posts</button>
+        <button class="tablinks" onclick="openCity(event, 'Replies')">Replies</button>
+        <button class="tablinks" onclick="openCity(event, 'Media')">Media</button>
     </div>
 
     <div id="Posts" class="tabcontent">
-          <h3>Posts</h3>
-          <p>This is where all Posts a user has made will be displayed.</p>
-    </div>
-
-        <div class="column right">
-
-
-
-
+        <div>
+            <br>
         </div>
+        {% for post in posts %}
+        <article class="media content-section border-bottom border-dark">
+          <img class="rounded-circle bottom-img" src="{{ url_for('static', filename='images/profile_pics/' + post.user.image_file) }}">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <b>{{ post.user.name }}</b>&ensp;<span class="text=muted">{{ '@' + post.user.username }}</span> &centerdot;
+                    <small class="text-muted">{{ post.posted_at.strftime('%b %d, %Y') }}</small>
+                </div>
+                <p class="article-content">{{ post.content }}</p>
+            </div>
+        </article>
+    {% endfor %}
+
+    </div>
+</div>
+
+ <div class="column right">
+
+
+
+</div>
+
 
 {% endblock content%}

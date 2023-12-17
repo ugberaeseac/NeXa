@@ -39,4 +39,16 @@ body {font-family: Arial, sans-serif;}
   border-top: none;
   background-color: #000000;
   color: #FFF;
+  font-size: 14px;
 }
+
+.profile-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin-right: auto;
+  text-align: left;
+  font-family: arial;
+}
+
+
+

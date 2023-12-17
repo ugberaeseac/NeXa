@@ -40,7 +40,7 @@ def home():
             db.session.commit()
             return redirect(url_for('home'))
         posts = Post.query.order_by(Post.posted_at.desc()).all()
-        return render_template('home.html', form=form, posts=posts)
+        return render_template('home.html', title='Nexa - Home', form=form, posts=posts)
     else:
         return redirect(url_for('login'))
 
@@ -142,4 +142,6 @@ def profile():
     """
 
     """
-    return render_template('profile.html')
+    if current_user.is_authenticated:
+        posts = Post.query.filter_by(user_id=current_user.id).all()
+    return render_template('profile.html', title='NeXa - Profile', posts=posts)

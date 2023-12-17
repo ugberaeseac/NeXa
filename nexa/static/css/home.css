@@ -34,6 +34,7 @@
 
 body.dark-theme {
   font-family: "Open Sans", sans-serif;
+  font-size: 14px;
   margin: 0px;
   background-color: #000000;
   color: #FFFFFF;
@@ -79,6 +80,7 @@ body.dark-theme {
 .icon-bar {
   width: 200px;
   background-color: #000000;
+  font-family: "Open Sans", sans-serif;
 }
 
 .icon-bar a {
@@ -87,7 +89,7 @@ body.dark-theme {
   padding: 16px;
   transition: all 0.3s ease;
   color: #FFFFFF;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .icon-bar a:hover {
@@ -97,11 +99,6 @@ body.dark-theme {
 
 .active {
   background-color: #000000;
-}
-
-
-.hz-line {
-  border: 0.5px solid rgba(255, 255, 255, 25.0%);
 }
 
 input[type=text], textarea{
@@ -116,17 +113,16 @@ input[type=text], textarea{
 }
 
 input[type=submit] {
-  background-color: #546AEF;
-  color: white;
-  padding: 12px 20px;
-  border: none;
+  color: #FFFFFF;
+  padding: 5px 10px;
   border-radius: 4px;
   cursor: pointer;
   float: right;
 }
 
+
 input[type=submit]:hover {
-  background-color: #45a049;
+  background-color: #546AEF;
 }
 
 
