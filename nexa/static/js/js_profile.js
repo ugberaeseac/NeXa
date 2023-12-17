@@ -1,3 +1,8 @@
+$(document).ready(function() {
+   $("#postButton").trigger('click');
+});
+
+
 function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");

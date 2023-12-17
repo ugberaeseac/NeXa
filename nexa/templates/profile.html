@@ -2,20 +2,22 @@
 {% block content %}
 
 
-<div class="column middle border-left border-right  border-dark">
-<div class="profile-card fixed-left">
-  <img  src="{{ url_for('static', filename='images/profile_pics/' + current_user.image_file) }}" alt="">
-  <h3 class="mt-0">{{ current_user.name }}</h3>
-  <h6 class="mt-0">{{ '@' + current_user.username }}</h6>
-  <small class="mt-0 text-secondary">{{ current_user.email }} </h6>
-  <div style="margin: 24px 0;">
-  <i class="fa fa-calendar">&nbsp; {{ current_user.created_at.strftime('%b %Y') }}</i>
+<div class="position-relative  column middle border-left border-right  border-dark">
+<div class="profile-relative">
+<img  src="{{ url_for('static', filename='images/keep_it_simple.jpg') }}" width=100% height=100%>
+  <div class="profile-absolute">
+  	<img class="rounded-circle profile-img" src="{{ url_for('static', filename='images/profile_pics/' + current_user.image_file) }}">
   </div>
+</div>
 
-</div> 
-    <br>
+  <div style="margin: 100px 0 30px 0;">
+  <h5 class="mt-0 mb-0">{{ current_user.name }}</h5>
+  <h6 class="mt-0 text-muted">{{ '@' + current_user.username }}</h6>
+  <span><i class="fa fa-calendar text-muted">&nbsp;</i></span><span class="mt-0 text-muted"> Joined {{ current_user.created_at.strftime('%B %Y') }}</span>
+  </div>
+   
     <div class="border-bottom border-dark tab">
-        <button class="tablinks" onclick="openCity(event, 'Posts')">Posts</button>
+        <button id="postButton" class="tablinks" onclick="openCity(event, 'Posts')">Posts</button>
         <button class="tablinks" onclick="openCity(event, 'Replies')">Replies</button>
         <button class="tablinks" onclick="openCity(event, 'Media')">Media</button>
     </div>

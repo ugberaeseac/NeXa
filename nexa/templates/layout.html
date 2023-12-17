@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans">
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/nexa_logo.png') }}">
 
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
     {% if title %}
 	<title> {{ title }} </title>
     {% else %}
@@ -25,11 +27,8 @@
     <div class="container">
               <div class="row">
                 <div class="column left">
-                    <div>
-                    <img src="{{ url_for('static', filename='images/nexa-logo.png') }}" width=50% height=50%>
-                    </div>
                     
-                    <div class="icon-bar">
+                    <div class="icon-bar iconbar-sticky">
                         <a class="active" href="{{ url_for('home') }}"><i class="fa fa-home"> &ensp;Home</i></a>
                         <a href="#"><i class="fa fa-bell"> &ensp;Notifications</i></a>
                         <a href="#"><i class="fa fa-envelope"> &ensp;Messages </i></a>

@@ -113,7 +113,6 @@ input[type=text], textarea{
 }
 
 input[type=submit] {
-  color: #FFFFFF;
   padding: 5px 10px;
   border-radius: 4px;
   cursor: pointer;
@@ -138,4 +137,9 @@ input[type=submit]:hover {
   content: "";
   display: table;
   clear: both;
+}
+
+.iconbar-sticky {
+  position: -webkit-sticky;
+  position: fixed;
 }

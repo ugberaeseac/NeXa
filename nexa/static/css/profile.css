@@ -42,13 +42,25 @@ body {font-family: Arial, sans-serif;}
   font-size: 14px;
 }
 
-.profile-card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin-right: auto;
-  text-align: left;
-  font-family: arial;
+.profile-relative {
+  position: relative;
+  width: 100%;
+  height: 150px;
+} 
+
+.profile-absolute {
+  position: absolute;
+  bottom: -75px;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  border: 5px solid #000000;
+  border-radius: 50%;
 }
 
-
-
+.profile-img {
+  margin-left: 0;
+  width: 145px;
+  height: 145px;
+  margin-bottom: 20px;
+}
