@@ -13,17 +13,22 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans">
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/nexa_logo.png') }}">
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    {% if title %}
+	<title> {{ title }} </title>
+    {% else %}
+	<title> NeXa </title>
+    {% endif %}
   </head>
 <body class="dark-theme">
 
     <div class="container">
               <div class="row">
                 <div class="column left">
-                    <div>
-                    <img src="{{ url_for('static', filename='images/nexa-logo.png') }}" width=50% height=50%>
-                    </div>
                     
-                    <div class="icon-bar">
+                    <div class="icon-bar iconbar-sticky">
                         <a class="active" href="{{ url_for('home') }}"><i class="fa fa-home"> &ensp;Home</i></a>
                         <a href="#"><i class="fa fa-bell"> &ensp;Notifications</i></a>
                         <a href="#"><i class="fa fa-envelope"> &ensp;Messages </i></a>
@@ -31,7 +36,7 @@
                         <a href="{{ url_for('profile') }}"><i class="fa fa-user"> &ensp;Profile </i></a>
 
                         <a href="{{ url_for('settings') }}"><i class="fa fa-gear"> &ensp;Settings </i></a>
-                        <a href="{{ url_for('logout') }}"><i class="fa fa-trash"> &ensp;Log out </i></a>
+			<a href="{{ url_for('logout') }}"><i class="fa fa-sign-out"> &ensp;Log out </i></a>
 			<br><br>
 			<div class=" media border-top-1">
 				<img class="rounded-circle bottom-img" src="{{ url_for('static', filename='images/profile_pics/' + current_user.image_file) }}">

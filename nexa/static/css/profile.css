@@ -39,4 +39,28 @@ body {font-family: Arial, sans-serif;}
   border-top: none;
   background-color: #000000;
   color: #FFF;
+  font-size: 14px;
+}
+
+.profile-relative {
+  position: relative;
+  width: 100%;
+  height: 150px;
+} 
+
+.profile-absolute {
+  position: absolute;
+  bottom: -75px;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  border: 5px solid #000000;
+  border-radius: 50%;
+}
+
+.profile-img {
+  margin-left: 0;
+  width: 145px;
+  height: 145px;
+  margin-bottom: 20px;
 }
