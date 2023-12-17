@@ -29,11 +29,11 @@
   <div class="col">
     <div class=form-group">
       <fieldset>
-	      {{ form.email(placeholder="Email Password") }}
-	      {{ form.password(placeholder="Password") }}
-	      <div class="d-inline">
-	        {{ form.remember() }} Remember me
-	      </div>
+        {{ form.email(class="input", placeholder="Email Password") }}
+        {{ form.password(class="input", placeholder="Password") }}
+        <div class="d-inline">
+          {{ form.remember() }} Remember me
+          </div>
 
           {{ form.submit(class="") }}
           <hr> 

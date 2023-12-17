@@ -17,11 +17,14 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 1000
+}
+.logos{
+    margin-left: 1rem;
 }
 .logo{
     width: max(70px, 7vw);
-    aspect-ratio: 6 / 3.6;
-    padding: 0;
+    aspect-ratio: 11 / 4;
 }
 
 .logos{
@@ -30,10 +33,12 @@ header{
     align-items: center;
     color: #fff;
 }
+/*
 .logo-name{
     padding-left: 0.7rem;
     font-size: 2rem;
 }
+*/
 nav{
     width: 50%;
     max-width: 500px;
@@ -41,7 +46,7 @@ nav{
 }
 nav ul{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     flex-wrap: wrap;
     align-items: center;
     padding-inline-start: 0;
@@ -55,6 +60,7 @@ nav ul li{
     padding: 0.2rem;
     display: block;
     font-size: 1rem;
+    margin-right: 1.6rem;
 }
 nav ul li:hover{
     color: #363688;

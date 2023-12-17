@@ -52,15 +52,28 @@ section{
 }
 
 .first_section{
+    position: relative;
     padding-top: 8vh;
-    background-image: url("../images/fist-bumps.jpg");
-    background-size: cover;
     height: 92vh;
     display: flex;
     align-items: center;
     color: rgb(255, 255, 255);
     margin: 0;
 }
+
+.first_section::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/fist-bumps.jpg");
+    filter: brightness(50%);
+    background-size: cover;
+    z-index: -1;
+}
+
 .first_section .caption{
     text-align: center;
     width: 60%;
@@ -89,86 +102,57 @@ section{
     color: wheat;
 }
 
+.second_section{
+    background-color: #D1D0D1;
+    color: #1a1b15;
+}
 
-.second_section, .third_section{
+.second_section .showcase{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.second_section .showcase:nth-child(2) .details,
+.second_section .showcase:nth-child(4) .details{
+    order: 2;
+}
+
+.second_section .showcase:nth-child(2) .image,
+.second_section .showcase:nth-child(4) .image{
+    order: 1;
+    transform: rotate(6deg);
+}
+
+.second_section .showcase .details{
+    width: 40%;
+}
+
+.second_section .showcase .details p{
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+}
+
+.second_section .showcase .image{
+    width: 60%;
+    box-sizing: border-box;
+}
+
+.second_section .showcase .image img{
+    margin: 3rem;
+    padding: 3rem 5rem;
+    width: 80%;
+    height: 80%;
+    transform: rotate(-3deg);
+}
+
+.third_section{
     min-height: 100vh;
     padding-top: 8vh;
 }
 
-.second_section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-.second_section .about-heading,
-.second_section .promises {
-    background-color: #D1D0D1;
-    color: #17172A;
-}
-.second_section .about-heading{
-    height: 20%;
-}
-.second_section .about-heading article{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.second_section .about-heading article h2{
-    flex: 1;
-    width: 45%;
-    padding: 0 2rem;
-}
-.second_section .about-heading article p{
-    flex: 2;
-    width: 55%;
-    padding: 0 2rem;
-}
-.second_section .about-details{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    background-color: grey;
-    padding: 1rem 0;
-    height: 60%;
-}
-.second_section .about-left{
-    flex: 2;
-    width: 65%;
-}
-.about-left article{
-    width: 90%;
-    margin: 10px auto;
-}
-.about-left li p{
-    font-weight: 500;
-    font-size: 1.2rem;
-}
-.details{
-    font-size: 0.95rem;
-    font-weight: normal;
-}
-.highlight{
-    margin-bottom: 1rem;
-}
-.highlight, .benefit{
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-.second_section .about-right{
-    flex: 1;
-}
-.second_section img{
-    width: 90%;
-}
 
-.promises{
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    height: 20%;
-}
 
 .buttons{
     display: flex;
@@ -211,30 +195,6 @@ section{
     justify-content: center;
 }
 
-@media (max-width: 700px) {
-    .contact-us-form {
-        flex-wrap: wrap; /* allow wrapping */
-    }
-    .about-details{
-        flex-direction: column;
-    }
-    .contact-us-left,
-    .contact-us-right {
-        min-height: 40vh;
-        min-width: 100%;
-    }
-    
-    .contact-us-icons{
-        padding-top: 1rem;
-    }
-
-    .button, .button-login, .button-signup{
-        font-size: 16px;
-    }
-    .button{
-        padding-left: 0.5rem;
-    }
-}
 form {
     font-family: Tahoma;
     width: 80%;
@@ -366,4 +326,59 @@ fieldset{
 }
 .contact-us-icons ul li .instagram:hover span { 
     background: #c32aa3;
+}
+
+
+@media (max-width: 700px) {
+    .contact-us-form {
+        flex-wrap: wrap; /* allow wrapping */
+    }
+    .about-details{
+        flex-direction: column;
+    }
+    .contact-us-left,
+    .contact-us-right {
+        min-height: 40vh;
+        min-width: 100%;
+    }
+    
+    .contact-us-icons{
+        padding-top: 1rem;
+    }
+
+    .button, .button-login, .button-signup{
+        font-size: 16px;
+    }
+    .button{
+        padding-left: 0.5rem;
+    }
+    .second_section .showcase{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 50%;
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .second_section .showcase .details{
+        width: 100%;
+    }
+
+    .second_section .showcase .image{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .second_section .showcase .image img{
+        padding: 0;
+        margin: 1rem;
+        width: 80%;
+        transform: rotate(-3deg);
+    }
+    .second_section .showcase:nth-child(2) .details,
+    .second_section .showcase:nth-child(4) .details,
+    .second_section .showcase:nth-child(2) .image,
+    .second_section .showcase:nth-child(4) .image {
+        order: initial;
+    }
 }

@@ -55,7 +55,7 @@ def signup():
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(
                  form.password.data).decode('utf-8')
-        name = f"{form.first_name.data}" + " " + f"{form.last_name.data}"
+        name = f"{form.first_name.data} {form.last_name.data}"
         user = User(name=name, username=form.username.data,
                  password=hashed_password, email=form.email.data)
         db.session.add(user)

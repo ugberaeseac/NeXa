@@ -25,8 +25,7 @@ body{
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: auto 0;
+    margin-top: auto;
     /*background-color: #10174a;
     background-image: url("../../images/gradient-blue-bg.jpg");
     background-size: cover;*/
@@ -41,10 +40,13 @@ body{
     width: 680px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(110, 110, 110, 0.1);
-    background-color: rgba(110, 110, 110, 0.1);
+    background-color: rgba(214, 210, 210, 0.1);
     border: 2px solid rgba(110, 110, 110, 0.1);
     backdrop-filter: blur(50px);
-    padding: 40px 35px 55px;
+    padding: 40px 40px 55px;
+}
+#signup_form{
+    width: 100%
 }
 .container h1{
     font-size: 2rem;
@@ -65,6 +67,9 @@ fieldset{
     height: 50px;
     margin: 13px 0;
 }
+
+.input-box .input-field span{
+    font-size: 00.8rem}
 
 .input-box .input-field input{
     width: 100%;
@@ -90,6 +95,7 @@ fieldset{
     transform: translateY(-50%);
     left: 15px;
 }
+
 
 .button{
     width: 100%;
@@ -130,7 +136,7 @@ fieldset{
     font-size: 0.75rem;
 }
 .warning{
-    color: wheat;
+    color: black;
 }
 
 @media screen and (max-width: 650px){

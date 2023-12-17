@@ -1,22 +1,57 @@
 document.addEventListener("DOMContentLoaded", function() {
-    let signupForm = document.getElementById('signup_form');
 
-    if (signupForm){
-        let firstNameInput = document.getElementById('first-name');
+    function input_check(input_id){
+        let name = document.getElementById(input_id);
 
-        firstNameInput.addEventListener('blur', function() {
-            if (!firstNameInput.checkValidity()){
-                firstNameInput.style.border = '2px solid rgba(255, 0, 0, .5)'
-                console.log("Got here");
+        console.log(name)
+        console.log(name.checkValidity())
+        
+        name.addEventListener('blur', function() {
+            if (!name.checkValidity()){
+                name.style.border = '2px solid rgba(255, 0, 0, .5)'
+                console.log(name.validationMessage);
+                console.log(name.reportValidity());
             }
         });
 
-        firstNameInput.addEventListener('input', function() {
-            if (firstNameInput.checkValidity()){
-                firstNameInput.style.border = '2px solid rgba(255, 255, 255, .2)'
+        name.addEventListener('input', function() {
+            if (name.checkValidity()){
+                name.style.border = '2px solid rgba(0, 0, 255, .2)'
                 console.log("Got here also");
             }
         });
+    }
+
+    let signupForm = document.getElementById('signup_form');
+
+    if (signupForm){
+
+        input_check('first-name');
+        input_check('last-name');
+        input_check('user-name');
+
+        function emailValidator(){
+            let emailCheck = document.getElementById('email');
+            const emailValidate = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            emailCheck.addEventListener('blur', function(){
+                if (!emailValidate.test(emailCheck.value)){
+                    emailCheck.setCustomValidity('Invalid email format')
+                    emailCheck.reportValidity();
+                    emailCheck.style.border = '2px solid rgba(255, 0, 0, .5)';
+                    console.log("Invalid email format");
+                    return (false);
+                }
+                else{
+                    emailCheck.setCustomValidity('');
+                    emailCheck.style.border = '2px solid rgba(0, 0, 255, .2)';
+                    console.log("valid email format");
+                    return (true);
+                }
+            });
+        }
+
+        emailValidator();
         
         let password = document.getElementById('password');
         let confirm_password = document.getElementById('confirm_password');
@@ -36,7 +71,14 @@ document.addEventListener("DOMContentLoaded", function() {
             if (password.value !== confirm_password.value) {
                 event.preventDefault();
             }
+            else if (!emailValidator()){
+                event.preventDefault();
+            }
+            else{
+                console.log('Form submitted successfully!')
+            }
         });
     }
+
 
 })
