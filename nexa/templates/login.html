@@ -26,53 +26,23 @@
           
         </div>
 
-  <div class="col">
-    <div class=form-group">
-      <fieldset>
-        {{ form.email(class="input", placeholder="Email Password") }}
-        {{ form.password(class="input", placeholder="Password") }}
-        <div class="d-inline">
+        <div class="col">
+        <fieldset>
+          {{ form.email(class="input", placeholder="Email Password") }}
+          {{ form.password(class="input", placeholder="Password") }}
+          <div class="d-inline">
           {{ form.remember() }} Remember me
           </div>
 
           {{ form.submit(class="") }}
           <hr> 
 
-	</fieldset>
-        Don't have an account? <a href="{{ url_for('signup') }}">Sign up</a>
+        </fieldset>
+          Don't have an account? <a href="{{ url_for('signup') }}">Sign up</a>
+        </div>
       </div>
-    </div>
-      
-      
-    </div>
-  </form>
-</div>
-
-<div class="bottom-container fixed-bottom">
-  <div class="row">
-    <div class="col">
-	    <a href=" {{ url_for('signup') }}" style="color:white" class="btn">Signup</a>
-    </div>
-    <div class="col">
-	    <a href="{{ url_for('index') }}" style="color:white" class="btn">About</a>
-    </div>
-    <div class="col">
-      <a href="#" style="color:white" class="btn">Help</a>
-    </div>
-    <div class="col">
-      <a href="#" style="color:white" class="btn">Terms of Service</a>
-    </div>
-    <div class="col">
-      <a href="#" style="color:white" class="btn">Developers</a>
-    </div>
-    <div class="col">
-      <small class="btn">NeXa © 2023</small>
-    </div>
-
+    </form>
   </div>
-
-</div>
-
+  {% include "footer.html" %}
 </body>
 </html>
-
