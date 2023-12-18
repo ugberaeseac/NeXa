@@ -72,7 +72,35 @@
 		        <div class="form-group">
                         {{ form.save(class="btn btn-outline-primary form-control") }}
                         </div>
-		  </form>
+		   </form></div>
+		   <div class="content-section">
+		   </div>
+                   <div class="content-section">
+                   </div>
+		   <div class="content-section border-dark">
+		    <form method="POST" action="" enctype="multipart/form-data">
+                   	 {{ delete_form.hidden_tag() }}
+                   <fieldset>
+                        <legend class="border-bottom border-dark mb-4">Delete Account</legend>
+                        <div class="form-group">
+                       		{% if delete_form.name.errors  %}
+                                {{ delete_form.name(class="form-control form-control-lg border is-invalid") }}
+                                <div class="invalid-feedback">
+                                        {% for error in delete_form.name.errors %}
+                                                <span> {{ error }}
+                                        {% endfor %}
+                                </div>
+                        	{% else %}
+				<p class="delete-account"> To confirm, type your full name "{{ current_user.name }} " in the box below</p>
+                       		{{ delete_form.name(class="delete-account orm-control form-control-lg border") }}
+                       		{% endif %}
+                        </div>
+                    </fieldset>
+                        <br><br>
+                        <div class="form-group">
+                        {{ delete_form.delete(class="btn-delete btn btn-outline-primary form-control") }}
+                        </div>
+                    </form>
                 </div>
 
                 <div class="column right">

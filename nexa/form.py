@@ -86,3 +86,11 @@ class PostForm(FlaskForm):
     """
     content = TextAreaField('Post', validators=[DataRequired()])
     submit = SubmitField('Post')
+
+
+class DeleteForm(FlaskForm):
+    """
+    Delete an account form
+    """
+    name = StringField('Name', validators=[DataRequired(), Length(min=4, max=50)])
+    delete = SubmitField('Delete this account')

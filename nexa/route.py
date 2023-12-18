@@ -9,7 +9,7 @@ from PIL import Image
 from nexa import app
 from nexa import db
 from nexa import bcrypt
-from nexa.form import RegistrationForm, LoginForm, UpdateForm, PostForm
+from nexa.form import RegistrationForm, LoginForm, UpdateForm, PostForm, DeleteForm
 from nexa.models import User, Post, Comment
 from flask_login import login_user, current_user, logout_user, login_required
 import secrets
@@ -109,7 +109,6 @@ def settings():
         current_user.name = form.name.data
         current_user.username = form.username.data
         current_user.email = form.email.data
-        """db.session.add(current_user)"""
         db.session.commit()
         flash('Your account has been updated!', 'success')
         return redirect(url_for('settings'))
@@ -117,8 +116,16 @@ def settings():
         form.name.data = current_user.name
         form.username.data = current_user.username
         form.email.data = current_user.email
+
+    delete_form = DeleteForm()
+    if delete_form.validate_on_submit():
+        if delete_form.name.data == current_user.name:
+            user = User.query.get(current_user.id)
+            db.session.delete(user)
+            db.session.commit()
+            return redirect(url_for('signup'))
     image_file = url_for('static', filename='images/profile_pics/' + current_user.image_file)
-    return render_template('settings.html', title='NeXa - Account Information', form=form, image_file=image_file)
+    return render_template('settings.html', title='NeXa - Account Information', form=form, delete_form=delete_form, image_file=image_file)
 
 
 def save_upload_photo(picture):
