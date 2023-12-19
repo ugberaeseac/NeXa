@@ -165,3 +165,11 @@ def delete():
         else:
             flash('You entered an incorrect information', 'danger')
     return render_template('delete.html', title='NeXa - Delete Account', delete_form=delete_form)
+
+
+@app.route('/team')
+def team():
+    """
+    Meet the team
+    """
+    return render_template('team.html', title='NeXa - Meet the team')

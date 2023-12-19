@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href=" {{ url_for('static', filename='css/login.css') }} ">
+<link rel="stylesheet" href=" {{ url_for('static', filename='css/team.css') }} ">
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/nexa_logo.png') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<title>NeXa - Meet the team!</title>
+</head>
+<body>
+
+<div class="row">
+ <div class="column">
+	<div class="card">
+		<img src=" {{ url_for('static', filename='images/profile_pics/charles.png') }} " style="width:100%">
+  	 <h2>Ugberaese Charles A.</h2>
+  	 <p class="title">Full-stack Developer & DevOps</p>
+  	 <div style="margin: 24px 0;">
+    	<a href="https://github.com/ugberaeseac"><i class="fa fa-github"></i></a> 
+    	<a href="https://twitter.com/ugberaeseac"><i class="fa fa-twitter"></i></a>  
+    	<a href="https://linkedin.com/ugberaeseac"><i class="fa fa-linkedin"></i></a>  
+  	 </div>
+     <p><button></button></p>
+	</div>
+</div>
+
+  <div class="column">
+	<div class="card">
+ 	 <img src="{{ url_for('static', filename='images/profile_pics/akanni.png') }}" style="width:100%;">
+  	 <h2>Akanni Williams A.</h2>
+  	 <p class="title">Full-stack Developer</p>
+  	 <div style="margin: 24px 0;">
+    	<a href="https://github.com/shadowbanks"><i class="fa fa-github"></i></a> 
+    	<a href="https://twitter.com/GhostProTech"><i class="fa fa-twitter"></i></a>  
+    	<a href="https://linkedin.com/williams-akanni"><i class="fa fa-linkedin"></i></a>  
+  	 </div>
+     <p><button></button></p>
+	</div>
+  </div>
+  
+
+</div>
+{% include "footer.html" %}
+</body>
+</html>

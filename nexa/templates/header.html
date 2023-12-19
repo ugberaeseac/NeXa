@@ -8,6 +8,7 @@
     <nav>
         <ul>
             {% if request.endpoint != 'signup' %}
+	    	<li class="contactUs"><a href=" {{ url_for('team') }}">Meet the team</a></li>
                 <li class="contactUs"><a href="#third_section">Contact us</a></li>
                 <li class="Signup"><a href="{{ url_for('signup') }}">Sign up</a></li>
             {% endif %}
