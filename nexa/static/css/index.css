@@ -108,7 +108,7 @@ section{
 }
 
 .second_section .showcase{
-    height: 50vh;
+    height: 65vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -122,11 +122,15 @@ section{
 .second_section .showcase:nth-child(2) .image,
 .second_section .showcase:nth-child(4) .image{
     order: 1;
-    transform: rotate(6deg);
 }
 
 .second_section .showcase .details{
     width: 40%;
+}
+
+.second_section .showcase .details h2{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .second_section .showcase .details p{
@@ -142,9 +146,8 @@ section{
 .second_section .showcase .image img{
     margin: 3rem;
     padding: 3rem 5rem;
-    width: 80%;
-    height: 80%;
-    transform: rotate(-3deg);
+    width: 85%;
+    height: 85%;
 }
 
 .third_section{
@@ -309,11 +312,11 @@ fieldset{
     transition:transform .5s;
 }
   
-.facebook:hover {
-    color: #3b5998;
+.github:hover {
+    color: #4078c0;
 }
-.contact-us-icons ul li .facebook:hover span { 
-    background: #3b5998;
+.contact-us-icons ul li .github:hover span { 
+    background: #4078c0;
 }
 .twitter:hover {
     color: #141313;
