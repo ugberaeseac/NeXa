@@ -1,9 +1,11 @@
 <link rel="stylesheet" href=" {{ url_for('static', filename='css/footer.css') }} ">
 
 <footer class="footer">
+    {% if request.endpoint != 'signup' %}
     <div class="item">
 	    <a href=" {{ url_for('signup') }}"><small>Signup</small></a>
     </div>
+    {% endif %}
     <div class="item">
 	    <a href="{{ url_for('index') }}"><small>About</small></a>
     </div>

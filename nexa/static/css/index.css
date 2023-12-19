@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    font-size: 17px;
 }
 a{
     text-decoration: none;
@@ -150,6 +149,37 @@ section{
     height: 85%;
 }
 
+.about-us{
+    color: #0a0a23;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    padding: 1rem 3rem 5rem 2rem;
+    margin-bottom: 0;
+}
+
+.about-us h3{
+    text-align: left;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+.about-us .inspiration,
+.about-us .team{
+    width: 48%;
+}
+
+.about-us .team{
+    margin-left: 2rem;
+    font-size: 1.3rem;
+}
+
+.about-us .team a{
+    text-decoration: none;
+    color: #5757d2;
+}
 .third_section{
     min-height: 100vh;
     padding-top: 8vh;
@@ -383,5 +413,10 @@ fieldset{
     .second_section .showcase:nth-child(2) .image,
     .second_section .showcase:nth-child(4) .image {
         order: initial;
+    }
+    
+    .about-us .inspiration,
+    .about-us .team{
+        width: 100%;
     }
 }
