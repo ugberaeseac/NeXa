@@ -14,7 +14,7 @@
 <div class="signup-body">
     <div class="container">
         <form id="signup_form" action="/signup" method="post">
-            <h1>Signup</h1>
+            <h1>Create your account</h1>
             <fieldset>
                 {{ form.hidden_tag() }}
                 <div class="input-box">
@@ -108,7 +108,7 @@
                 {{ form.submit(class="button")}}
                 <div class="login-link">
                     <small>
-                        Already Have An Account? <a href="{{ url_for('login') }}">Log In</a>
+                        Already have an account? <a href="{{ url_for('login') }}">Log in</a>
                     </small>
                 </div>
             </fieldset>

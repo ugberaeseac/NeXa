@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+{% block layoutcontent %}
+
+        <div class="column middle border-left border-right border-dark">
+                <div class="content-section">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                     {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                                  {{ message }}
+                        </div>
+                      {% endfor %}
+                    {% endif %}
+                  {% endwith %}
+                    <div class="media border-bottom-1">
+                            <img class="rounded-circle account-img" src="{{ url_for('static', filename='images/profile_pics/' + current_user.image_file) }}">
+                      <div class="media-body">
+                        <h3 class="mt-0">{{ current_user.name }}</h3>
+                        <h6 class="mt-0">{{ '@' + current_user.username }}</h6>
+                        <p class="mt-0 text-secondary">{{ current_user.email }} </p>
+                      </div>
+		    </div><br>
+                   <form method="POST" action="" enctype="multipart/form-data">
+                    {{ delete_form.hidden_tag() }}
+                   <fieldset>
+                        <legend class="border-bottom border-dark mb-4">Delete Account</legend>
+                        <div class="form-group">
+                                {% if delete_form.full_name.errors  %}
+                                {{ delete_form.full_name(class="form-control form-control-lg border is-invalid") }}
+                                <div class="invalid-feedback">
+                                        {% for error in delete_form.name.errors %}
+                                                <span> {{ error }}
+                                        {% endfor %}
+                                </div>
+                                {% else %}
+				<div id="delete-account">
+	                                <p> To confirm, type your full name "{{ current_user.name }}" in the box below</p>
+        	                        {{ delete_form.full_name(class="delete-account form-control form-control-lg border") }}
+				</div>
+                                {% endif %}
+                        </div>
+                    </fieldset>
+                        <br><br>
+                        <div class="form-group">
+                        {{ delete_form.delete(id="btn-delete", class="btn btn-outline-primary form-control") }}
+                        </div>
+                    </form>
+                </div>
+
+        <div class="column right">
+
+
+       </div>
+
+
+{% endblock layoutcontent%}

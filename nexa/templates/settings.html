@@ -1,9 +1,17 @@
 {% extends 'layout.html' %}
-{% block content %}
+{% block layoutcontent %}
                 
 	<div class="column middle border-left border-right border-dark">
-		
 		<div class="content-section">
+	        {% with messages = get_flashed_messages(with_categories=true) %}
+	            {% if messages %}
+	             {% for category, message in messages %}
+                	<div class="alert alert-{{ category }}">
+		                  {{ message }}
+                	</div>
+	              {% endfor %}
+        	    {% endif %}
+	          {% endwith %}
 		    <div class="media border-bottom-1">
 			    <img class="rounded-circle account-img" src="{{ image_file }}">
 		      <div class="media-body">
@@ -78,30 +86,10 @@
                    <div class="content-section">
                    </div>
 		   <div class="content-section border-dark">
-		    <form method="POST" action="" enctype="multipart/form-data">
-                   	 {{ delete_form.hidden_tag() }}
-                   <fieldset>
-                        <legend class="border-bottom border-dark mb-4">Delete Account</legend>
-                        <div class="form-group">
-                       		{% if delete_form.name.errors  %}
-                                {{ delete_form.name(class="form-control form-control-lg border is-invalid") }}
-                                <div class="invalid-feedback">
-                                        {% for error in delete_form.name.errors %}
-                                                <span> {{ error }}
-                                        {% endfor %}
-                                </div>
-                        	{% else %}
-				<p class="delete-account"> To confirm, type your full name "{{ current_user.name }} " in the box below</p>
-                       		{{ delete_form.name(class="delete-account textarea-bg form-control form-control-lg border") }}
-                       		{% endif %}
-                        </div>
-                    </fieldset>
-                        <br><br>
-                        <div class="form-group">
-                        {{ delete_form.delete(class="btn-delete btn btn-outline-primary form-control") }}
-                        </div>
-                    </form>
-                </div>
+			<legend class="border-bottom border-dark mb-4">Delete account </legend>
+			<em> We understand that sometimes it's necessary to take a step back from the digital world. If you've decided to part ways with your NeXa account, </em>
+			<em> Click <a href="{{ url_for('delete') }}" > Here  </a> to delete your account, and we'll walk you through it.</em>
+                   </div>
 
 	<div class="column right">
 
@@ -109,4 +97,4 @@
        </div>
 
 
-{% endblock content%}
+{% endblock layoutcontent%}

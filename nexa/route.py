@@ -92,6 +92,7 @@ def logout():
     logs out the user
     """
     logout_user()
+    flash('You have successfully logged out of your account', 'info')
     return redirect(url_for('login'))
 
 
@@ -117,15 +118,8 @@ def settings():
         form.username.data = current_user.username
         form.email.data = current_user.email
 
-    delete_form = DeleteForm()
-    if delete_form.validate_on_submit():
-        if delete_form.name.data == current_user.name:
-            user = User.query.get(current_user.id)
-            db.session.delete(user)
-            db.session.commit()
-            return redirect(url_for('signup'))
     image_file = url_for('static', filename='images/profile_pics/' + current_user.image_file)
-    return render_template('settings.html', title='NeXa - Account Information', form=form, delete_form=delete_form, image_file=image_file)
+    return render_template('settings.html', title='NeXa - Account Information', form=form, image_file=image_file)
 
 
 def save_upload_photo(picture):
@@ -151,4 +145,23 @@ def profile():
     """
     if current_user.is_authenticated:
         posts = Post.query.filter_by(user_id=current_user.id).all()
-    return render_template('profile.html', title='NeXa - Profile', posts=posts)
+        return render_template('profile.html', title='NeXa - Profile', posts=posts)
+    else:
+        return redirect(url_for('login'))
+
+
+@app.route('/delete', methods=['GET', 'POST'])
+def delete():
+    """
+
+    """
+    delete_form = DeleteForm()
+    if delete_form.validate_on_submit():
+        if delete_form.full_name.data and delete_form.full_name.data == current_user.name:
+            user = User.query.get(current_user.id)
+            db.session.delete(user)
+            db.session.commit()
+            return redirect(url_for('signup'))
+        else:
+            flash('You entered an incorrect information', 'danger')
+    return render_template('delete.html', title='NeXa - Delete Account', delete_form=delete_form)

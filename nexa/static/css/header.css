@@ -63,9 +63,8 @@ nav ul li{
     margin-right: 1.6rem;
 }
 nav ul li:hover{
-    color: #363688;
-    background-color: #dfdfe2;
-    cursor: pointer;
+  opacity: 0.7;  
+  cursor: pointer;
 }
 
 header{

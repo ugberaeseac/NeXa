@@ -92,5 +92,5 @@ class DeleteForm(FlaskForm):
     """
     Delete an account form
     """
-    name = StringField('Name', validators=[DataRequired(), Length(min=4, max=50)])
+    full_name = StringField('Name', validators=[DataRequired(), Length(min=4, max=50)])
     delete = SubmitField('Delete this account')

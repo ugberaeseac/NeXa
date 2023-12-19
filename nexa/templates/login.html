@@ -11,7 +11,7 @@
 <title>NeXa - Log in</title>
 </head>
 <body>
-  <div class="container">
+<div class="container">
     <form method="POST" action="">
       {{ form.hidden_tag()  }}
       <div class="row">
@@ -27,6 +27,15 @@
         </div>
 
         <div class="col">
+	{% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
         <fieldset>
           {{ form.email(class="input", placeholder="Email") }}
           {{ form.password(class="input", placeholder="Password") }}
