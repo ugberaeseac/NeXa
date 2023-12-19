@@ -15,7 +15,7 @@
                         {% endfor %}
                     </div>
                 {% else %}
-                    {{ form.content(class="form-control", placeholder="What's on your mind..?") }}
+                    {{ form.content(class="form-control", placeholder="What's on your mind..?", style="font-size: 20px;") }}
                 {% endif %}
             </div>
         </fieldset>
@@ -24,11 +24,9 @@
         </div>
     </form>
 </div>
-                <div>
-                    <br>
-                </div>
+<div><br></div>
     {% for post in posts %}
-        <article class="media content-section  border-bottom border-dark">
+        <article class="media content-section border-bottom border-dark">
           <img class="rounded-circle bottom-img" src="{{ url_for('static', filename='images/profile_pics/' + post.user.image_file) }}">
           <div class="media-body">
             <div class="article-metadata">
@@ -45,7 +43,5 @@
         <div class="column right">
 
 
-
-        </div>
-
+       </div>
 {% endblock content%}

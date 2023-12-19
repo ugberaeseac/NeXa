@@ -119,6 +119,13 @@ input[type=submit] {
   float: right;
 }
 
+#content {
+ margin-top: 20px;
+ background: #000000;
+ color: #FFFFFF;
+ border: none;
+}
+
 
 input[type=submit]:hover {
   background-color: #546AEF;
@@ -142,4 +149,9 @@ input[type=submit]:hover {
 .iconbar-sticky {
   position: -webkit-sticky;
   position: fixed;
+}
+
+.textarea-bg {
+ background: #000000;
+ color: #FFFFFF;
 }

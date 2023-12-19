@@ -29,6 +29,7 @@
                 <div class="column left">
                     
                     <div class="icon-bar iconbar-sticky">
+		    <a  href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/logo_blackbg.png') }}" width=25% height=25%></a>
                         <a class="active" href="{{ url_for('home') }}"><i class="fa fa-home"> &ensp;Home</i></a>
                         <a href="#"><i class="fa fa-bell"> &ensp;Notifications</i></a>
                         <a href="#"><i class="fa fa-envelope"> &ensp;Messages </i></a>
@@ -51,6 +52,8 @@
     {% block content%}
 
     {% endblock content %}
+
+
 
 	      </div>
     </div>
