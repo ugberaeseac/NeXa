@@ -13,7 +13,7 @@
         	    {% endif %}
 	          {% endwith %}
 		    <div class="media border-bottom-1">
-			    <img class="rounded-circle account-img" src="{{ image_file }}">
+			    <img class="rounded-circle account-img" src="{{ url_for('static', filename='images/profile_pics/' + current_user.image_file) }}">
 		      <div class="media-body">
 		        <h3 class="mt-0">{{ current_user.name }}</h3>
 		        <h6 class="mt-0">{{ '@' + current_user.username }}</h6>

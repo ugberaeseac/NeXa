@@ -3,15 +3,23 @@
 
 """
 
+
+from os import getenv
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 
 
+NEXA_MYSQL_HOST = getenv('NEXA_MYSQL_HOST')
+NEXA_MYSQL_DB = getenv('NEXA_MYSQL_DB')
+NEXA_MYSQL_USER = getenv('NEXA_MYSQL_USER')
+NEXA_MYSQL_PWD = getenv('NEXA_MYSQL_PWD')
+NEXA_MYSQL_ENV = getenv('NEXA_MYSQL_ENV')
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://nexa_test:nexa_test_pwd@localhost/nexa_test_db'
+app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://{NEXA_MYSQL_USER}:{NEXA_MYSQL_PWD}@{NEXA_MYSQL_HOST}/{NEXA_MYSQL_DB}'
 db = SQLAlchemy(app)
 
 bcrypt = Bcrypt(app)
