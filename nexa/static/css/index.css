@@ -153,22 +153,40 @@ section{
     color: #0a0a23;
     background-color: white;
     display: flex;
-    flex-wrap: wrap;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1.2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1.35rem;
     padding: 1rem 3rem 5rem 2rem;
     margin-bottom: 0;
+    line-height: 1.8rem;
 }
 
 .about-us h3{
-    text-align: left;
+    text-align: center;
     margin-bottom: 1rem;
     padding-left: 2rem;
 }
 
-.about-us .inspiration,
-.about-us .team{
-    width: 48%;
+.about-us p{
+    margin-bottom: 0.5rem;
+}
+.about-us .inspiration{
+    width: 65%;
+}
+
+.about-us .team a{
+    text-align: center;
+    text-decoration: none;
+}
+
+.about-us .team h3{
+    width: 100%;
+    color: #ffffff;
+    padding: 1.1rem 1rem;
+    margin: 3rem 3rem 0;
+    border: none;
 }
 
 .about-us .team{
@@ -177,8 +195,6 @@ section{
 }
 
 .about-us .team a{
-    text-decoration: none;
-    color: #5757d2;
 }
 .third_section{
     min-height: 100vh;

@@ -4,6 +4,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
 }
 
 
@@ -15,7 +16,8 @@ body {
 
 
 .row {
-margin: 0 -5px;
+  margin: 0;
+  padding: 1rem;
 }
 
 .row:after {
