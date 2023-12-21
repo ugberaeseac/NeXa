@@ -21,9 +21,9 @@ def load_user(user_id):
 
 class User(db.Model, UserMixin):
     """
-    create a user class which represents the user table
+    create a User class which represents the users table
     in the database
-    Map user table to python object
+    Map users table to python object
     """
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
@@ -40,7 +40,7 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         """
-        Prints official string representation of the user class
+        Prints official string representation of the User class
         """
         msg = "User({}, {}, {}, {}, {})"
         return msg.format(self.username, self.name, self.email,
@@ -50,7 +50,9 @@ class User(db.Model, UserMixin):
 
 class Post(db.Model):
     """
-
+    create a Post class which represents the posts table
+    in the database
+    Maps the posts table to python object
     """
     __tablename__ = 'posts'
     id = db.Column(db.Integer, primary_key=True)
@@ -62,7 +64,7 @@ class Post(db.Model):
 
     def __repr__(self):
         """
-
+        Prints official string representation of the Post class
         """
         msg = 'Post({}, {}, {})'
         return msg.format(self.id, self.content, self.posted_at)
@@ -71,7 +73,9 @@ class Post(db.Model):
 
 class Comment(db.Model):
     """
-
+    create a Comment class which represents the comments table
+    in the database
+    Maps the comments table to python object
     """
     __tablename__ = 'comments'
     id = db.Column(db.Integer, primary_key=True)
@@ -82,7 +86,7 @@ class Comment(db.Model):
 
     def __repr__(self):
         """
-
+        Prints official string representation of the Comment class
         """
         msg = 'Comment({}, {}, {}'
         return msg.format(self.id, self.comment, self.created_at)

@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-
+Initialize the NeXa web application
+Push app context
 """
 
 

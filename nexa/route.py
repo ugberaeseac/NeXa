@@ -100,7 +100,8 @@ def logout():
 @login_required
 def settings():
     """
-
+    edit profile information
+    change display picture
     """
     form = UpdateForm()
     if form.validate_on_submit():
@@ -124,7 +125,7 @@ def settings():
 
 def save_upload_photo(picture):
     """
-
+    function that saves the profile picture ina the right path
     """
     hex_random = secrets.token_hex(8)
     _, file_ext = os.path.splitext(picture.filename)
@@ -141,7 +142,7 @@ def save_upload_photo(picture):
 @app.route('/profile', methods=['GET', 'POST'])
 def profile():
     """
-
+    displays a user's profile and posts
     """
     if current_user.is_authenticated:
         posts = Post.query.filter_by(user_id=current_user.id).all()
@@ -153,7 +154,7 @@ def profile():
 @app.route('/delete', methods=['GET', 'POST'])
 def delete():
     """
-
+    delete  account of user
     """
     delete_form = DeleteForm()
     if delete_form.validate_on_submit():

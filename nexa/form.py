@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 """
-
+Forms for user input
+    - Registration form
+    - Login form
+    - Update form
+    - Post form
+    - Delete form
 """
 
 
