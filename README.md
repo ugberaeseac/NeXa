@@ -58,5 +58,5 @@ python3 -m run
 Access the application in your browser at http://localhost:5000
 
 ## Authors
-Williams Akanni - [Github](https://github.com/shadowbanks) / [Twitter](https://twitter.com/ghostProTech)
+Williams Akanni - [Github](https://github.com/shadowbanks) / [Twitter](https://twitter.com/ghostProTech)  
 UGBERAESE Charles A. - [Github](https://github.com/ugberaeseac) / [Twitter](https://twitter.com/ugberaeseac)
